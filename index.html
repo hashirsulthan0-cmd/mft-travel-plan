@@ -1,0 +1,945 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MFT Golden Lucky Dip · Season 2.0</title>
+<meta name="description" content="MFT Luxury Travel Savings Plan. Save ₹2,000 or ₹5,000 a month for 16 months and get a guaranteed luxury trip in India or abroad, plus a monthly lucky dip for a Tata Altroz.">
+<meta name="theme-color" content="#060e1b">
+<link rel="icon" type="image/png" href="logo.png">
+<link rel="apple-touch-icon" href="logo.png">
+<!-- link preview (WhatsApp, Instagram, Facebook, LinkedIn, X, iMessage) -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="MFT · Time to Travel">
+<meta property="og:title" content="MFT Golden Lucky Dip · Season 2.0">
+<meta property="og:description" content="Luxury Travel Savings Plan. ₹2,000 or ₹5,000 a month for 16 months, a guaranteed luxury trip, and a Tata Altroz lucky dip every month.">
+<meta property="og:url" content="https://hashirsulthan0-cmd.github.io/mft-travel-plan/">
+<meta property="og:image" content="https://hashirsulthan0-cmd.github.io/mft-travel-plan/preview.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="MFT Golden Lucky Dip, Season 2.0, Luxury Travel Savings Plan">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="MFT Golden Lucky Dip · Season 2.0">
+<meta name="twitter:description" content="Luxury Travel Savings Plan. ₹2,000 or ₹5,000 a month for 16 months, a guaranteed luxury trip, and a Tata Altroz lucky dip every month.">
+<meta name="twitter:image" content="https://hashirsulthan0-cmd.github.io/mft-travel-plan/preview.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,600;0,6..96,700;1,6..96,500;1,6..96,600&family=Outfit:wght@300;400;500;600;700&display=swap">
+<style>
+/* Layout: one 1920x1080 stage scaled to the screen. Midnight navy ground, champagne gold as the single accent,
+   Bodoni for display moments, Outfit for everything that has to be read fast. */
+:root {
+  --night: #060e1b;
+  --navy: #0c1b31;
+  --panel: rgba(255, 255, 255, .045);
+  --gold: #d8b26a;
+  --gold-hi: #f4e2b0;
+  --gold-lo: #a9793a;
+  --ivory: #f5eee1;
+  --mist: #9fb0c7;
+  --line: rgba(216, 178, 106, .26);
+  --teal: #2a9d9a;
+  --t-gold: #e3b34f;
+  --t-diamond: #dde5f1;
+  --t-blue: #4cc6ec;
+  --t-crown: #c5a2f7;
+  --t-royal: #9f8dff;
+  --display: "Bodoni Moda", "Bodoni 72", Didot, Georgia, serif;
+  --sans: "Outfit", "Segoe UI", system-ui, -apple-system, sans-serif;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; }
+body {
+  background: var(--night); color: var(--ivory); font-family: var(--sans);
+  overflow: hidden; -webkit-tap-highlight-color: transparent; user-select: none;
+  padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+.viewer {
+  height: 100%; display: flex; flex-direction: column; gap: 10px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 12px;
+}
+.screen { position: relative; flex: 1; min-height: 0; display: grid; place-items: center; touch-action: pan-y; }
+.frame { position: relative; overflow: hidden; border-radius: 10px; box-shadow: 0 30px 90px rgba(0, 0, 0, .6), 0 0 0 1px rgba(216, 178, 106, .12); background: var(--night); }
+.stage { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; transform-origin: 0 0; overflow: hidden; }
+
+/* ---------- living background ---------- */
+.bgfx { position: absolute; inset: 0; overflow: hidden; }
+.bgfx .base {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(1100px 760px at 78% 12%, #15305a 0%, transparent 70%),
+    radial-gradient(900px 700px at 8% 100%, #0f2747 0%, transparent 70%),
+    linear-gradient(160deg, #081427 0%, #060e1b 60%, #050b16 100%);
+}
+.orb { position: absolute; border-radius: 50%; filter: blur(60px); transition: left 1.6s cubic-bezier(.6,0,.2,1), top 1.6s cubic-bezier(.6,0,.2,1); }
+.orb.o1 { width: 760px; height: 760px; left: var(--o1x, 1300px); top: var(--o1y, 0px); background: radial-gradient(circle, rgba(216,178,106,.30), rgba(216,178,106,0) 68%); animation: float1 14s ease-in-out infinite alternate; }
+.orb.o2 { width: 900px; height: 900px; left: var(--o2x, -200px); top: var(--o2y, 500px); background: radial-gradient(circle, rgba(42,157,154,.22), rgba(42,157,154,0) 68%); animation: float2 18s ease-in-out infinite alternate; }
+@keyframes float1 { to { transform: translate(-90px, 70px) scale(1.08); } }
+@keyframes float2 { to { transform: translate(110px, -60px) scale(.94); } }
+.routes { position: absolute; inset: 0; opacity: .55; }
+.routes .arc { fill: none; stroke: rgba(216, 178, 106, .22); stroke-width: 1.4; stroke-dasharray: 2 9; stroke-linecap: round; }
+.routes .ring { fill: none; stroke: rgba(159, 176, 199, .07); stroke-width: 1; }
+.plane { position: absolute; left: 0; top: 0; width: 26px; height: 26px; offset-path: path("M -60 860 C 420 520, 1100 300, 1990 210"); offset-rotate: auto; animation: fly 22s linear infinite; opacity: .8; }
+.plane2 { offset-path: path("M 1990 980 C 1500 760, 700 880, -60 560"); animation-duration: 30s; animation-delay: -11s; opacity: .5; }
+@keyframes fly { from { offset-distance: 0%; } to { offset-distance: 100%; } }
+.plane svg { width: 100%; height: 100%; fill: var(--gold-hi); filter: drop-shadow(0 0 6px rgba(244,226,176,.6)); }
+.grain { position: absolute; inset: -50%; opacity: .07; mix-blend-mode: overlay; pointer-events: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>"); }
+.vignette { position: absolute; inset: 0; background: radial-gradient(ellipse at center, transparent 55%, rgba(2, 6, 12, .55) 100%); pointer-events: none; }
+
+/* ---------- slides ---------- */
+.slide { position: absolute; inset: 0; opacity: 0; visibility: hidden; transition: opacity .5s ease, visibility 0s linear .5s; }
+.slide.on { opacity: 1; visibility: visible; transition: opacity .5s ease; z-index: 2; }
+.slide img { display: block; max-width: none; }
+
+.eyebrow { display: inline-flex; align-items: center; gap: 18px; font: 500 22px/1 var(--sans); letter-spacing: .32em; text-transform: uppercase; color: var(--gold); }
+.eyebrow::before { content: ""; width: 56px; height: 1px; background: linear-gradient(90deg, transparent, var(--gold)); }
+.h2 { font: 600 84px/1.02 var(--display); letter-spacing: -.01em; margin: 22px 0 0; text-wrap: balance; }
+.h2 em, .it { font-style: italic; font-weight: 500; }
+.gold-text {
+  background: linear-gradient(100deg, #a9793a 0%, #f4e2b0 30%, #d8b26a 50%, #fff4d2 66%, #b8873f 100%);
+  background-size: 220% 100%; -webkit-background-clip: text; background-clip: text; color: transparent;
+  animation: sheen 7s ease-in-out infinite;
+}
+@keyframes sheen { 0%, 100% { background-position: 0% 0; } 50% { background-position: 100% 0; } }
+.ln { display: block; overflow: hidden; padding: .12em 0 .1em; margin: -.12em 0 -.1em; }
+.ln > * { display: inline-block; }
+.head { position: absolute; left: 120px; top: 92px; right: 120px; }
+.head .sub { margin-top: 18px; font: 300 26px/1.4 var(--sans); color: var(--mist); max-width: 1100px; }
+
+.foot { position: absolute; left: 120px; right: 120px; bottom: 40px; display: flex; align-items: center; justify-content: space-between; font: 500 17px var(--sans); letter-spacing: .22em; text-transform: uppercase; color: rgba(159,176,199,.7); }
+.foot .fb { display: flex; align-items: center; gap: 14px; }
+.foot img { width: 36px; height: 36px; }
+.foot .pg { font-variant-numeric: tabular-nums; }
+.foot .pg b { color: var(--gold); font-weight: 600; }
+
+.glass { background: linear-gradient(160deg, rgba(255,255,255,.07), rgba(255,255,255,.025)); border: 1px solid var(--line); border-radius: 28px; backdrop-filter: blur(6px); }
+
+/* ---------- entry animations ---------- */
+.slide.on [class*="a-"] { animation-duration: .9s; animation-timing-function: cubic-bezier(.2,.8,.2,1); animation-fill-mode: both; animation-delay: var(--d, 0s); }
+.slide.on .a-up    { animation-name: up; }
+.slide.on .a-down  { animation-name: down; }
+.slide.on .a-left  { animation-name: left; }
+.slide.on .a-right { animation-name: right; }
+.slide.on .a-fade  { animation-name: fade; animation-duration: 1.1s; }
+.slide.on .a-zoom  { animation-name: zoom; animation-duration: 1.1s; }
+.slide.on .a-blur  { animation-name: blurin; animation-duration: 1.2s; }
+.slide.on .a-rise  { animation-name: rise; animation-duration: 1s; animation-timing-function: cubic-bezier(.16,1,.3,1); }
+.slide.on .a-pop   { animation-name: pop; animation-duration: .8s; animation-timing-function: ease-out; }
+.slide.on .a-spin  { animation-name: spin; animation-duration: 1.1s; }
+.slide.on .a-grow  { animation-name: grow; animation-duration: 1.2s; animation-timing-function: cubic-bezier(.6,0,.2,1); }
+.slide.on .a-wipe  { animation-name: wipe; animation-duration: 1.2s; animation-timing-function: cubic-bezier(.7,0,.2,1); }
+.slide.on .a-arch  { animation-name: arch; animation-duration: 1.4s; animation-timing-function: cubic-bezier(.7,0,.2,1); }
+.slide.on .a-draw  { animation-name: draw; animation-duration: 1.2s; animation-timing-function: ease-in-out; }
+.slide.on .a-drive { animation-name: drive; animation-duration: 1.6s; animation-timing-function: linear; }
+@keyframes fade   { from { opacity: 0; } }
+@keyframes up     { from { opacity: 0; transform: translateY(60px); } }
+@keyframes down   { from { opacity: 0; transform: translateY(-60px); } }
+@keyframes left   { from { opacity: 0; transform: translateX(-90px); } }
+@keyframes right  { from { opacity: 0; transform: translateX(110px); } }
+@keyframes zoom   { from { opacity: 0; transform: scale(.82); } }
+@keyframes blurin { from { opacity: 0; filter: blur(18px); transform: scale(1.06); } }
+@keyframes rise   { from { transform: translateY(108%); } }
+@keyframes pop    { 0% { opacity: 0; transform: scale(.5); } 65% { opacity: 1; transform: scale(1.05); } 100% { transform: none; } }
+@keyframes spin   { from { opacity: 0; transform: rotate(-160deg) scale(.4); } }
+@keyframes grow   { from { transform: scaleX(0); } }
+@keyframes wipe   { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
+@keyframes arch   { from { clip-path: inset(100% 0 0 0 round 320px 320px 28px 28px); } to { clip-path: inset(0 0 0 0 round 320px 320px 28px 28px); } }
+@keyframes draw   { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+@keyframes drive  {
+  0% { opacity: 0; transform: translateX(900px); animation-timing-function: cubic-bezier(.15,.7,.3,1); }
+  10% { opacity: 1; }
+  78% { transform: translateX(-22px); animation-timing-function: ease-in-out; }
+  100% { transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .slide.on [class*="a-"] { animation-name: fade !important; animation-duration: .4s !important; animation-delay: 0s !important; }
+  .orb, .plane, .gold-text, .marquee .col, .seal svg { animation: none !important; }
+}
+
+/* ---------- 1 cover ---------- */
+.cover-left { position: absolute; left: 120px; top: 96px; width: 900px; }
+.brand { display: flex; align-items: center; gap: 20px; }
+.brand img { width: 92px; height: 92px; filter: drop-shadow(0 8px 24px rgba(0,0,0,.5)); }
+.brand b { display: block; font: 700 34px/1 var(--sans); letter-spacing: .18em; }
+.brand span { display: block; margin-top: 6px; font: 400 18px var(--sans); letter-spacing: .34em; text-transform: uppercase; color: var(--gold); }
+.cover-left .eyebrow { margin-top: 74px; }
+.cover-title { margin: 26px 0 0; font: 600 172px/.92 var(--display); letter-spacing: -.02em; }
+.cover-title .it { font-weight: 500; }
+.cover-sub { margin: 30px 0 0; font: 400 30px/1.3 var(--sans); letter-spacing: .26em; text-transform: uppercase; color: var(--ivory); }
+.plans { display: flex; gap: 24px; margin-top: 58px; }
+.plan { flex: 1; padding: 28px 32px 30px; }
+.plan .k { font: 500 18px var(--sans); letter-spacing: .3em; text-transform: uppercase; color: var(--mist); }
+.plan .v { margin-top: 12px; display: flex; align-items: baseline; gap: 10px; }
+.plan .v b { font: 600 74px/1 var(--display); }
+.plan .v small { font: 400 24px var(--sans); color: var(--mist); }
+.plan .n { margin-top: 14px; font: 400 22px var(--sans); color: var(--ivory); opacity: .85; }
+.cover-note { margin-top: 30px; font: 300 22px var(--sans); color: var(--mist); letter-spacing: .04em; }
+.cover-note b { color: var(--gold-hi); font-weight: 500; }
+.arch-frame { position: absolute; right: 120px; top: 70px; width: 680px; height: 940px; border-radius: 340px 340px 28px 28px; overflow: hidden; box-shadow: 0 40px 120px rgba(0,0,0,.6); }
+.arch-frame::after { content: ""; position: absolute; inset: 0; border-radius: inherit; border: 1.5px solid rgba(244, 226, 176, .55); box-shadow: inset 0 0 0 10px rgba(6,14,27,.35); pointer-events: none; }
+.arch-frame .shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(6,14,27,.1) 0%, rgba(6,14,27,0) 40%, rgba(6,14,27,.75) 100%); pointer-events: none; }
+.arch-outline { position: absolute; right: 96px; top: 46px; width: 728px; height: 988px; border-radius: 364px 364px 40px 40px; border: 1px solid rgba(216,178,106,.3); }
+.marquee { position: absolute; inset: -40px; display: flex; gap: 14px; transform: rotate(-6deg) scale(1.12); }
+.marquee .col { flex: 1; display: flex; flex-direction: column; gap: 14px; animation: scrollUp 38s linear infinite; }
+.marquee .col:nth-child(2) { animation-name: scrollDown; animation-duration: 44s; }
+.marquee .col:nth-child(3) { animation-duration: 34s; }
+.marquee img { width: 100%; height: 300px; object-fit: cover; border-radius: 18px; }
+@keyframes scrollUp { from { transform: translateY(0); } to { transform: translateY(-50%); } }
+@keyframes scrollDown { from { transform: translateY(-50%); } to { transform: translateY(0); } }
+.arch-cap { position: absolute; left: 0; right: 0; bottom: 44px; text-align: center; font: 500 italic 34px var(--display); color: var(--ivory); text-shadow: 0 4px 20px rgba(0,0,0,.6); }
+.arch-cap small { display: block; margin-top: 8px; font: 500 16px var(--sans); font-style: normal; letter-spacing: .4em; text-transform: uppercase; color: var(--gold-hi); }
+.seal { position: absolute; left: 1010px; top: 96px; width: 236px; height: 236px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #22406b, #0b1a30 70%); box-shadow: 0 20px 60px rgba(0,0,0,.6), inset 0 0 0 1px rgba(244,226,176,.5); display: grid; place-items: center; }
+.seal svg { position: absolute; inset: 0; width: 100%; height: 100%; animation: rot 26s linear infinite; }
+.seal text { font: 600 14px var(--sans); letter-spacing: 2.6px; fill: var(--gold-hi); text-transform: uppercase; }
+@keyframes rot { to { transform: rotate(360deg); } }
+.seal .c { text-align: center; }
+.seal .c b { display: block; font: 600 76px/1 var(--display); }
+.seal .c span { display: block; margin-top: 2px; font: 500 14px var(--sans); letter-spacing: .34em; color: var(--mist); text-transform: uppercase; }
+
+/* ---------- 2 / 4 plan ---------- */
+.plan-left { position: absolute; left: 120px; top: 92px; width: 860px; }
+.price-k { margin-top: 54px; font: 500 22px var(--sans); letter-spacing: .3em; text-transform: uppercase; color: var(--mist); }
+.price { display: flex; align-items: baseline; gap: 18px; margin-top: 4px; }
+.price b { font: 600 190px/1 var(--display); letter-spacing: -.03em; }
+.price small { font: 300 40px var(--sans); color: var(--mist); }
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 46px; }
+.stat { padding: 26px 30px; }
+.stat b { display: block; font: 600 54px/1 var(--display); color: var(--ivory); }
+.stat span { display: block; margin-top: 10px; font: 400 19px var(--sans); letter-spacing: .2em; text-transform: uppercase; color: var(--mist); }
+.promise { display: inline-flex; align-items: center; gap: 18px; margin-top: 36px; padding: 18px 30px 18px 20px; border-radius: 999px; background: linear-gradient(90deg, rgba(216,178,106,.2), rgba(216,178,106,.04)); border: 1px solid rgba(216,178,106,.5); font: 500 25px var(--sans); color: var(--gold-hi); }
+.promise i { width: 40px; height: 40px; border-radius: 50%; background: var(--gold); display: grid; place-items: center; flex: none; }
+.promise i svg { width: 22px; height: 22px; stroke: var(--night); stroke-width: 3; fill: none; }
+.photo-arch { position: absolute; right: 150px; top: 92px; width: 560px; height: 830px; border-radius: 300px 300px 28px 28px; overflow: hidden; box-shadow: 0 40px 120px rgba(0,0,0,.55); }
+.photo-arch .stk { position: absolute; inset: 0; display: flex; flex-direction: column; gap: 10px; animation: kenburns 16s ease-out both; }
+.photo-arch .stk img { width: 100%; flex: 1; min-height: 0; object-fit: cover; }
+.slide:not(.on) .photo-arch .stk { animation: none; }
+@keyframes kenburns { from { transform: scale(1.12) translateY(20px); } to { transform: scale(1.02); } }
+.photo-arch::after { content: ""; position: absolute; inset: 0; border-radius: inherit; border: 1.5px solid rgba(244,226,176,.5); background: linear-gradient(180deg, transparent 55%, rgba(6,14,27,.8)); }
+.photo-arch .tag { position: absolute; left: 0; right: 0; bottom: 40px; z-index: 2; text-align: center; font: 500 italic 40px var(--display); }
+.photo-arch .tag small { display: block; font: 500 16px var(--sans); font-style: normal; letter-spacing: .36em; text-transform: uppercase; color: var(--gold-hi); margin-bottom: 8px; }
+.photo-mini { position: absolute; width: 330px; height: 230px; border-radius: 22px; overflow: hidden; border: 6px solid #0c1b31; box-shadow: 0 30px 80px rgba(0,0,0,.6); }
+.photo-mini img { width: 100%; height: 100%; object-fit: cover; }
+
+/* ---------- 3 / 5 destinations ---------- */
+.dest-grid { position: absolute; left: 120px; right: 120px; top: 318px; display: grid; gap: 22px; }
+.dest-grid.g6 { grid-template-columns: repeat(6, 1fr); }
+.dest-grid.g5 { grid-template-columns: repeat(5, 1fr); }
+.dest { position: relative; height: 310px; border-radius: 24px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,.45); }
+.dest img { width: 100%; height: 100%; object-fit: cover; transition: transform 6s ease; }
+.slide.on .dest img { transform: scale(1.08); }
+.dest::after { content: ""; position: absolute; inset: 0; border-radius: inherit; background: linear-gradient(180deg, rgba(6,14,27,0) 40%, rgba(6,14,27,.92)); box-shadow: inset 0 0 0 1px rgba(244,226,176,.18); }
+.dest .cap { position: absolute; left: 22px; right: 18px; bottom: 20px; z-index: 2; }
+.dest .cap b { display: block; font: 600 27px/1.15 var(--sans); color: #fff; text-wrap: balance; overflow-wrap: anywhere; }
+.dest .cap b.sm { font-size: 22px; }
+.dest .cap span { display: block; margin-top: 6px; font: 500 14px var(--sans); letter-spacing: .24em; text-transform: uppercase; color: var(--gold-hi); }
+.dest-grid.g5 .dest { height: 290px; }
+.dest-grid.g5 .dest.wide { grid-column: span 1; }
+
+/* ---------- 6 lucky dip ---------- */
+.ld-left { position: absolute; left: 120px; top: 92px; width: 820px; }
+.ld-big { margin: 28px 0 0; font: 600 160px/.95 var(--display); letter-spacing: -.02em; }
+.ld-pre { margin-top: 22px; font: 300 40px/1.25 var(--sans); color: var(--ivory); }
+.ld-chips { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 46px; }
+.chip { display: inline-flex; align-items: center; gap: 14px; padding: 16px 26px; border-radius: 999px; font: 500 23px var(--sans); }
+.chip.solid { background: var(--gold); color: var(--night); font-weight: 600; }
+.chip.line { border: 1px solid var(--line); color: var(--ivory); background: rgba(255,255,255,.04); }
+.chip svg { width: 26px; height: 26px; }
+.ld-note { margin-top: 40px; font: 300 22px/1.5 var(--sans); color: var(--mist); max-width: 700px; }
+.ld-note b { color: var(--ivory); font-weight: 500; }
+.spot { position: absolute; left: 860px; top: -120px; width: 1100px; height: 1200px; background: conic-gradient(from 180deg at 50% 0%, transparent 160deg, rgba(244,226,176,.16) 175deg, rgba(244,226,176,.22) 180deg, rgba(244,226,176,.16) 185deg, transparent 200deg); filter: blur(8px); }
+.floor { position: absolute; left: 900px; top: 880px; width: 1000px; height: 120px; border-radius: 50%; background: radial-gradient(ellipse, rgba(216,178,106,.45), rgba(216,178,106,0) 70%); filter: blur(6px); }
+.car { position: absolute; left: 880px; top: 380px; width: 1000px; }
+.car img { width: 100%; filter: drop-shadow(0 30px 40px rgba(0,0,0,.6)); }
+.car .refl { position: absolute; left: 0; top: 100%; width: 100%; transform: scaleY(-1); opacity: .18; -webkit-mask-image: linear-gradient(0deg, rgba(0,0,0,.9), transparent 35%); mask-image: linear-gradient(0deg, rgba(0,0,0,.9), transparent 35%); margin-top: -20px; }
+.confetti { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+.confetti i { position: absolute; top: -40px; width: 10px; height: 18px; border-radius: 2px; opacity: 0; }
+.slide.on .confetti i { animation: fall var(--t) linear var(--cd) infinite; }
+@keyframes fall { 0% { opacity: 0; transform: translateY(0) rotate(0); } 10% { opacity: .9; } 100% { opacity: 0; transform: translateY(1180px) translateX(var(--sx)) rotate(var(--r)); } }
+
+/* ---------- 7 power of 5 ---------- */
+.p5-left { position: absolute; left: 120px; top: 92px; width: 860px; }
+.p5-title { margin: 20px 0 0; font: 600 200px/.9 var(--display); letter-spacing: -.02em; }
+.p5-title .of { display: inline-block; font: 500 italic 90px var(--display); color: var(--mist); margin: 0 10px 0 16px; vertical-align: middle; }
+.p5-copy { margin-top: 30px; font: 300 30px/1.45 var(--sans); color: var(--mist); max-width: 760px; }
+.p5-copy b { color: var(--ivory); font-weight: 500; }
+.p5-stats { display: flex; gap: 22px; margin-top: 54px; }
+.p5-stats .glass { padding: 28px 34px; min-width: 330px; }
+.p5-stats .k { font: 500 18px var(--sans); letter-spacing: .28em; text-transform: uppercase; color: var(--mist); }
+.p5-stats .v { margin-top: 12px; font: 600 72px/1 var(--display); }
+.orbit { position: absolute; left: 1030px; top: 120px; width: 800px; height: 800px; }
+.orbit svg.lines { position: absolute; inset: 0; overflow: visible; }
+.orbit svg.lines circle { fill: none; stroke: rgba(216,178,106,.22); stroke-width: 1.5; stroke-dasharray: 4 10; }
+.orbit svg.lines line { stroke: url(#lg); stroke-width: 2.5; }
+.node { position: absolute; width: 150px; height: 150px; margin: -75px 0 0 -75px; border-radius: 50%; display: grid; place-items: center; text-align: center; }
+.node.m { background: radial-gradient(circle at 35% 30%, #1d3a63, #0c1b31 72%); border: 1.5px solid rgba(244,226,176,.55); box-shadow: 0 16px 50px rgba(0,0,0,.5); }
+.node.m svg { width: 54px; height: 54px; fill: var(--gold-hi); }
+.node.m span { display: block; margin-top: 4px; font: 500 15px var(--sans); letter-spacing: .2em; text-transform: uppercase; color: var(--mist); }
+.node.you { width: 250px; height: 250px; margin: -125px 0 0 -125px; background: radial-gradient(circle at 35% 30%, #f4e2b0, #c89b52 55%, #8a6128); box-shadow: 0 0 0 14px rgba(216,178,106,.12), 0 0 0 30px rgba(216,178,106,.06), 0 30px 80px rgba(0,0,0,.5); color: var(--night); }
+.node.you b { display: block; font: 600 120px/1 var(--display); }
+.node.you span { display: block; margin-top: -4px; font: 600 16px var(--sans); letter-spacing: .3em; text-transform: uppercase; }
+.pulse { position: absolute; left: 400px; top: 400px; width: 250px; height: 250px; margin: -125px 0 0 -125px; border-radius: 50%; border: 2px solid rgba(216,178,106,.5); }
+.slide.on .pulse { animation: pulse 2.8s ease-out 2s infinite; }
+@keyframes pulse { from { transform: scale(1); opacity: .8; } to { transform: scale(3.1); opacity: 0; } }
+
+/* ---------- 8 income ---------- */
+.inc-grid { position: absolute; left: 120px; right: 120px; top: 360px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
+.inc { padding: 40px 42px; height: 270px; display: flex; flex-direction: column; justify-content: space-between; position: relative; overflow: hidden; }
+.inc .ic { width: 84px; height: 84px; border-radius: 22px; display: grid; place-items: center; background: linear-gradient(145deg, rgba(216,178,106,.28), rgba(216,178,106,.06)); border: 1px solid rgba(216,178,106,.45); }
+.inc .ic svg { width: 44px; height: 44px; stroke: var(--gold-hi); stroke-width: 1.8; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.inc b { font: 600 46px/1.05 var(--display); }
+.inc::after { content: ""; position: absolute; right: -60px; top: -60px; width: 220px; height: 220px; border-radius: 50%; background: radial-gradient(circle, rgba(216,178,106,.16), transparent 70%); }
+
+/* ---------- tables (9, 10, 11) ---------- */
+.tbl { position: absolute; left: 120px; top: 300px; }
+.tr { display: grid; align-items: center; height: 104px; padding: 0 36px; border-radius: 22px; margin-bottom: 12px; background: linear-gradient(90deg, rgba(255,255,255,.065), rgba(255,255,255,.02)); border: 1px solid rgba(216,178,106,.16); font-variant-numeric: tabular-nums; }
+.tr.th { height: 50px; background: none; border: 0; margin-bottom: 6px; font: 500 17px var(--sans); letter-spacing: .26em; text-transform: uppercase; color: var(--mist); }
+.lvl { font: 500 22px var(--sans); color: var(--mist); letter-spacing: .08em; }
+.lvl sup { font-size: .6em; }
+.des { display: flex; align-items: center; gap: 22px; font: 600 30px var(--sans); letter-spacing: .04em; }
+.des img { width: 86px; height: 64px; object-fit: contain; flex: none; filter: drop-shadow(0 8px 14px rgba(0,0,0,.45)); }
+.num { font: 600 44px var(--display); }
+.num.r { text-align: right; }
+.calc { font: 400 30px var(--sans); color: var(--ivory); }
+.calc i { font-style: normal; color: var(--gold); margin: 0 6px; }
+.c-gold { color: var(--t-gold); } .c-diamond { color: var(--t-diamond); } .c-blue { color: var(--t-blue); } .c-crown { color: var(--t-crown); } .c-royal { color: var(--t-royal); }
+.bar { position: relative; height: 14px; border-radius: 7px; background: rgba(255,255,255,.07); margin-right: 40px; }
+.bar i { position: absolute; left: 0; top: 0; bottom: 0; width: var(--w); border-radius: 7px; background: linear-gradient(90deg, var(--gold-lo), var(--gold-hi)); transform-origin: left; box-shadow: 0 0 18px rgba(216,178,106,.45); }
+.bar-cell { display: grid; grid-template-columns: 1fr 110px; align-items: center; }
+.total { position: absolute; right: 120px; top: 300px; width: 540px; height: 636px; padding: 50px 48px; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden; }
+.total .k { font: 500 20px var(--sans); letter-spacing: .3em; text-transform: uppercase; color: var(--gold); }
+.total .t { margin-top: 16px; font: 600 54px/1.05 var(--display); }
+.total .v { font: 600 80px/1 var(--display); letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
+.total .s { margin-top: 14px; font: 300 22px/1.4 var(--sans); color: var(--mist); }
+.total .ring { position: absolute; right: -170px; top: -170px; width: 440px; height: 440px; border-radius: 50%; border: 1px solid rgba(216,178,106,.25); box-shadow: 0 0 0 40px rgba(216,178,106,.04), 0 0 0 90px rgba(216,178,106,.03); }
+
+/* ---------- 12 awards ---------- */
+.aw-grid { position: absolute; left: 120px; right: 120px; top: 318px; display: grid; grid-template-columns: repeat(5, 1fr); gap: 22px; }
+.aw { height: 650px; border-radius: 28px; overflow: hidden; display: flex; flex-direction: column; position: relative; }
+.aw .ph { height: 300px; position: relative; overflow: hidden; }
+.aw .ph img { width: 100%; height: 100%; object-fit: cover; }
+.aw .ph::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 50%, rgba(10,22,40,.95)); }
+.aw .ic { position: absolute; left: 50%; top: 248px; width: 112px; height: 112px; margin-left: -56px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #1d3a63, #0a1628 72%); border: 1.5px solid rgba(244,226,176,.5); display: grid; place-items: center; z-index: 2; box-shadow: 0 14px 40px rgba(0,0,0,.5); }
+.aw .ic img { width: 76px; height: 62px; object-fit: contain; }
+.aw .bd { flex: 1; padding: 78px 26px 34px; text-align: center; display: flex; flex-direction: column; }
+.aw .tier { font: 600 17px var(--sans); letter-spacing: .26em; text-transform: uppercase; }
+.aw .rw { margin-top: 18px; font: 600 42px/1.05 var(--display); }
+.aw .rs { margin-top: 12px; font: 400 18px/1.45 var(--sans); letter-spacing: .14em; text-transform: uppercase; color: var(--mist); }
+.aw .lv { margin-top: auto; font: 500 16px var(--sans); letter-spacing: .3em; text-transform: uppercase; color: rgba(159,176,199,.6); }
+
+/* ---------- 13 highlights ---------- */
+.hl-grid { position: absolute; left: 120px; right: 120px; top: 360px; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.hl { display: flex; align-items: center; gap: 30px; padding: 38px 40px; }
+.hl .ck { width: 70px; height: 70px; flex: none; border-radius: 50%; background: var(--gold); display: grid; place-items: center; box-shadow: 0 0 0 10px rgba(216,178,106,.12); }
+.hl .ck svg { width: 34px; height: 34px; stroke: var(--night); stroke-width: 3.2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.hl b { font: 600 44px/1.15 var(--display); }
+.cta { position: absolute; left: 120px; right: 120px; top: 780px; height: 170px; border-radius: 40px; display: flex; align-items: center; justify-content: space-between; padding: 0 60px; background: linear-gradient(100deg, #b8873f, #f4e2b0 45%, #d8b26a 70%, #a9793a); color: var(--night); box-shadow: 0 30px 80px rgba(216,178,106,.25); overflow: hidden; }
+.cta b { display: block; font: 600 62px/1 var(--display); }
+.cta span { display: block; margin-top: 12px; font: 600 21px var(--sans); letter-spacing: .34em; text-transform: uppercase; opacity: .78; }
+.cta .arrow { width: 110px; height: 110px; border-radius: 50%; background: var(--night); display: grid; place-items: center; }
+.cta .arrow svg { width: 46px; height: 46px; stroke: var(--gold-hi); stroke-width: 2.4; fill: none; }
+.cta::after { content: ""; position: absolute; top: 0; bottom: 0; width: 220px; left: -300px; background: linear-gradient(100deg, transparent, rgba(255,255,255,.55), transparent); transform: skewX(-18deg); }
+.slide.on .cta::after { animation: sweep 1.4s ease-in-out 2.4s both; }
+@keyframes sweep { to { left: 1900px; } }
+
+/* ---------- 14 terms ---------- */
+.terms-en { position: absolute; left: 120px; right: 120px; top: 232px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 60px; row-gap: 10px; counter-reset: t; }
+.term { display: grid; grid-template-columns: 46px 1fr; gap: 14px; font: 400 20px/1.35 var(--sans); color: #d7deea; }
+.term::before { counter-increment: t; content: counter(t, decimal-leading-zero); font: 600 18px/1.6 var(--sans); color: var(--gold); letter-spacing: .06em; }
+.kn-card { position: absolute; left: 120px; right: 120px; top: 596px; height: 450px; border-radius: 26px; background: #f6efe2; padding: 22px 34px 18px; display: flex; flex-direction: column; align-items: center; gap: 12px; box-shadow: 0 24px 70px rgba(0,0,0,.45); }
+.kn-card img.kt { height: 306px; width: auto; }
+.kn-card img.kb { width: 100%; height: auto; border-radius: 12px; }
+
+/* ---------- 15 about ---------- */
+.ab-left { position: absolute; left: 120px; top: 92px; width: 700px; }
+.ab-title { margin: 22px 0 0; font: 600 108px/.98 var(--display); letter-spacing: -.015em; }
+.tag-lines { margin-top: 46px; display: grid; gap: 10px; }
+.tag-lines div { font: 500 italic 36px/1.3 var(--display); color: var(--ivory); }
+.tag-lines div:nth-child(2) { color: var(--gold-hi); }
+.ab-web { margin-top: 56px; display: inline-flex; align-items: center; gap: 16px; padding: 18px 28px; border-radius: 999px; border: 1px solid var(--line); font: 500 24px var(--sans); letter-spacing: .08em; }
+.ab-web svg { width: 26px; height: 26px; stroke: var(--gold); fill: none; stroke-width: 1.8; }
+.ab-list { position: absolute; left: 900px; right: 120px; top: 110px; display: grid; gap: 18px; }
+.ab { display: grid; grid-template-columns: 76px 1fr; gap: 26px; padding: 26px 32px; align-items: start; }
+.ab .ic { width: 76px; height: 76px; border-radius: 20px; display: grid; place-items: center; background: rgba(216,178,106,.12); border: 1px solid rgba(216,178,106,.4); }
+.ab .ic svg { width: 40px; height: 40px; stroke: var(--gold-hi); stroke-width: 1.8; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.ab b { display: block; font: 600 30px/1.2 var(--sans); }
+.ab p { margin: 8px 0 0; font: 300 21px/1.45 var(--sans); color: var(--mist); }
+
+/* ---------- 16 contact ---------- */
+.ct-logo { position: absolute; left: 50%; top: 52px; width: 116px; height: 116px; margin-left: -58px; filter: drop-shadow(0 16px 40px rgba(0,0,0,.6)); }
+.ct-title { position: absolute; left: 0; right: 0; top: 186px; margin: 0; text-align: center; font: 600 66px/1 var(--display); }
+.offices { position: absolute; left: 120px; right: 120px; top: 300px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.office { padding: 30px 36px; height: 290px; }
+.office .pin { display: flex; align-items: center; gap: 14px; font: 600 18px var(--sans); letter-spacing: .26em; text-transform: uppercase; color: var(--gold); }
+.office .pin svg { width: 26px; height: 26px; fill: var(--gold); }
+.office b { display: block; margin-top: 18px; font: 600 38px/1.05 var(--display); }
+.office p { margin: 14px 0 0; font: 300 21px/1.5 var(--sans); color: #c8d2e0; }
+.socials { position: absolute; left: 120px; right: 120px; top: 616px; height: 290px; grid-template-columns: 290px 1fr 1fr !important; display: grid; grid-template-columns: 300px 1fr 1fr; gap: 24px; }
+.qr { background: #fff; border-radius: 26px; padding: 14px; display: grid; place-items: center; }
+.qr img { width: 100%; height: 100%; object-fit: contain; border-radius: 12px; }
+.soc { padding: 40px 44px; display: flex; flex-direction: column; justify-content: center; gap: 14px; }
+.soc .k { font: 500 18px var(--sans); letter-spacing: .3em; text-transform: uppercase; color: var(--mist); display: flex; align-items: center; gap: 14px; }
+.soc .k svg { width: 34px; height: 34px; }
+.soc b { font: 600 50px/1.05 var(--display); word-break: break-word; }
+.soc .live { display: inline-flex; align-items: center; gap: 10px; padding: 8px 16px; border-radius: 999px; background: #e3262c; color: #fff; font: 700 15px var(--sans); letter-spacing: .24em; width: max-content; }
+.soc .live::before { content: ""; width: 10px; height: 10px; border-radius: 50%; background: #fff; }
+.slide.on .soc .live::before { animation: blink 1.2s ease-in-out infinite; }
+@keyframes blink { 50% { opacity: .2; } }
+
+/* ---------- controls ---------- */
+.zone { position: absolute; top: 0; bottom: 0; z-index: 3; cursor: pointer; background: none; border: 0; padding: 0; }
+.zone.prev { left: 0; width: 30%; }
+.zone.next { right: 0; width: 70%; }
+.zone:focus-visible { outline: 2px solid var(--gold); outline-offset: -4px; }
+.loading { position: absolute; inset: 0; display: grid; place-items: center; z-index: 6; background: var(--night); transition: opacity .5s; }
+.loading.done { opacity: 0; pointer-events: none; }
+.loading .in { text-align: center; color: var(--mist); font: 500 14px var(--sans); letter-spacing: .3em; text-transform: uppercase; }
+.loading img { width: 72px; height: 72px; display: block; margin: 0 auto 18px; }
+.loading .pb { width: 160px; height: 2px; margin: 16px auto 0; background: linear-gradient(90deg, var(--gold) var(--p, 0%), rgba(216,178,106,.2) 0); }
+.rail { display: flex; align-items: center; gap: 12px; max-width: 1000px; width: 100%; margin: 0 auto; }
+.btn { flex: none; height: 42px; min-width: 42px; padding: 0 14px; border-radius: 21px; border: 1px solid rgba(216,178,106,.3); background: #0d1c33; color: var(--ivory); font: 500 14px var(--sans); letter-spacing: .04em; display: inline-flex; align-items: center; justify-content: center; gap: 8px; cursor: pointer; }
+.btn:hover { border-color: var(--gold); }
+.btn:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+.btn svg { width: 16px; height: 16px; fill: currentColor; }
+.btn[aria-pressed="true"] { background: var(--gold); color: var(--night); border-color: var(--gold); }
+.track { flex: 1; min-width: 0; display: flex; gap: 4px; align-items: center; }
+.dot { flex: 1; height: 5px; border-radius: 3px; background: rgba(159,176,199,.22); border: 0; padding: 0; cursor: pointer; }
+.dot.seen { background: rgba(216,178,106,.45); }
+.dot.cur { background: var(--gold); }
+.dot:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+.count { flex: none; font: 600 14px var(--sans); color: var(--mist); font-variant-numeric: tabular-nums; min-width: 56px; text-align: center; }
+@media (max-width: 600px) { .track { display: none; } .rail { justify-content: center; } .btn .lbl { display: none; } }
+:fullscreen .viewer { padding-block: 0; }
+</style>
+</head>
+<body>
+<div class="viewer">
+  <div class="screen" id="screen">
+    <div class="frame" id="frame">
+      <div class="stage" id="stage">
+        <div class="bgfx" id="bgfx">
+          <div class="base"></div>
+          <div class="orb o1"></div>
+          <div class="orb o2"></div>
+          <svg class="routes" viewBox="0 0 1920 1080" preserveAspectRatio="none" aria-hidden="true">
+            <circle class="ring" cx="1560" cy="300" r="520"/>
+            <circle class="ring" cx="1560" cy="300" r="760"/>
+            <circle class="ring" cx="1560" cy="300" r="1000"/>
+            <path class="arc" d="M -60 860 C 420 520, 1100 300, 1990 210"/>
+            <path class="arc" d="M 1990 980 C 1500 760, 700 880, -60 560"/>
+          </svg>
+          <div class="plane"><svg viewBox="0 0 24 24"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z" transform="rotate(90 12 12)"/></svg></div>
+          <div class="plane plane2"><svg viewBox="0 0 24 24"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z" transform="rotate(90 12 12)"/></svg></div>
+          <div class="grain"></div>
+          <div class="vignette"></div>
+        </div>
+
+        <!-- 1 COVER -->
+        <section class="slide" data-glow="1250,-120,-260,560" aria-label="Golden Lucky Dip">
+          <div class="cover-left">
+            <div class="brand a-fade" style="--d:.1s"><img src="logo.webp" alt="MFT logo"><div><b>MFT</b><span>Time to Travel</span></div></div>
+            <div class="eyebrow a-left" style="--d:.45s">Season 2.0 · 2025</div>
+            <h1 class="cover-title">
+              <span class="ln"><span class="a-rise gold-text it" style="--d:.6s">Golden</span></span>
+              <span class="ln"><span class="a-rise" style="--d:.78s">Lucky Dip</span></span>
+            </h1>
+            <p class="cover-sub a-up" style="--d:1.1s">Luxury Travel Saving Plan</p>
+            <div class="plans">
+              <div class="plan glass a-up" style="--d:1.35s"><div class="k">Domestic</div><div class="v"><b class="gold-text">₹2,000</b><small>/ month</small></div><div class="n">3 days · 2 nights, by flight</div></div>
+              <div class="plan glass a-up" style="--d:1.5s"><div class="k">International</div><div class="v"><b class="gold-text">₹5,000</b><small>/ month</small></div><div class="n">5 days · 4 nights abroad</div></div>
+            </div>
+            <p class="cover-note a-fade" style="--d:1.9s">Up to <b>16 months</b> · Guaranteed luxury trip · Monthly lucky dip</p>
+          </div>
+          <div class="arch-outline a-fade" style="--d:1.2s"></div>
+          <div class="arch-frame a-arch" style="--d:.3s">
+            <div class="marquee" id="marquee"></div>
+            <div class="shade"></div>
+            <div class="arch-cap a-up" style="--d:1.4s">Your journey, our responsibility<small>Memorable Family Trips</small></div>
+          </div>
+          <div class="seal a-spin" style="--d:1.7s">
+            <svg viewBox="0 0 236 236" aria-hidden="true"><defs><path id="sealp" d="M118,118 m-92,0 a92,92 0 1,1 184,0 a92,92 0 1,1 -184,0"/></defs><text><textPath href="#sealp">Golden Lucky Dip · Season Two · Time to Travel · </textPath></text></svg>
+            <div class="c"><b class="gold-text">2.0</b><span>Season</span></div>
+          </div>
+        </section>
+
+        <!-- 2 DOMESTIC PLAN -->
+        <section class="slide" data-glow="900,-200,-300,600" aria-label="Domestic plan">
+          <div class="plan-left">
+            <div class="eyebrow a-left" style="--d:.1s">Plan 01 · Domestic</div>
+            <h2 class="h2"><span class="ln"><span class="a-rise" style="--d:.3s">Luxury Travel</span></span><span class="ln"><span class="a-rise" style="--d:.45s"><em>Savings Plan</em></span></span></h2>
+            <div class="price-k a-fade" style="--d:.8s">Save every month</div>
+            <div class="price a-blur" style="--d:.95s"><b class="gold-text">₹2,000</b><small>/ month</small></div>
+            <div class="stats">
+              <div class="stat glass a-up" style="--d:1.3s"><b>16</b><span>Months</span></div>
+              <div class="stat glass a-up" style="--d:1.45s"><b>3D · 2N</b><span>Trip length</span></div>
+              <div class="stat glass a-up" style="--d:1.6s"><b>Flight</b><span>Travel mode</span></div>
+            </div>
+            <div class="promise a-left" style="--d:1.9s"><i><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></i>Guaranteed luxury domestic trip by flight</div>
+          </div>
+          <div class="photo-arch a-arch" style="--d:.2s"><div class="stk"><img src="d-delhi.webp" alt="Taj Mahal"><img src="d-alleppey.webp" alt="Alleppey houseboat"><img src="d-goa.webp" alt="Goa beach"></div><div class="tag"><small>12 destinations across</small>Incredible India</div></div>
+          <div class="photo-mini a-pop" style="--d:1.2s; left:990px; top:150px"><img src="d-munnar.webp" alt="Munnar tea hills"></div>
+        </section>
+
+        <!-- 3 DOMESTIC DESTINATIONS -->
+        <section class="slide" data-glow="1400,-300,-200,700" aria-label="Domestic destinations">
+          <div class="head">
+            <div class="eyebrow a-left" style="--d:.1s">Domestic plan · 12 destinations</div>
+            <h2 class="h2"><span class="ln"><span class="a-rise" style="--d:.3s">Destinations to <em class="gold-text">choose from</em></span></span></h2>
+          </div>
+          <div class="dest-grid g6" data-dest="dom"></div>
+        </section>
+
+        <!-- 4 INTERNATIONAL PLAN -->
+        <section class="slide" data-glow="1000,-150,-250,520" aria-label="International plan">
+          <div class="plan-left">
+            <div class="eyebrow a-left" style="--d:.1s">Plan 02 · International</div>
+            <h2 class="h2"><span class="ln"><span class="a-rise" style="--d:.3s">Luxury International</span></span><span class="ln"><span class="a-rise" style="--d:.45s"><em>Travel Plan</em></span></span></h2>
+            <div class="price-k a-fade" style="--d:.8s">Save every month</div>
+            <div class="price a-blur" style="--d:.95s"><b class="gold-text">₹5,000</b><small>/ month</small></div>
+            <div class="stats">
+              <div class="stat glass a-up" style="--d:1.3s"><b>16</b><span>Months</span></div>
+              <div class="stat glass a-up" style="--d:1.45s"><b>5D · 4N</b><span>Trip length</span></div>
+              <div class="stat glass a-up" style="--d:1.6s"><b>Abroad</b><span>Destination</span></div>
+            </div>
+            <div class="promise a-left" style="--d:1.9s"><i><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></i>Guaranteed luxury international trip</div>
+          </div>
+          <div class="photo-arch a-arch" style="--d:.2s"><div class="stk"><img src="i-singapore.webp" alt="Singapore skyline"><img src="i-dubai.webp" alt="Dubai"><img src="i-malaysia.webp" alt="Malaysia beach"></div><div class="tag"><small>10 destinations abroad</small>The World Awaits</div></div>
+          <div class="photo-mini a-pop" style="--d:1.2s; left:990px; top:150px"><img src="i-maldives.webp" alt="Maldives"></div>
+        </section>
+
+        <!-- 5 INTERNATIONAL DESTINATIONS -->
+        <section class="slide" data-glow="1300,-250,-250,650" aria-label="International destinations">
+          <div class="head">
+            <div class="eyebrow a-left" style="--d:.1s">International plan · 10 destinations</div>
+            <h2 class="h2"><span class="ln"><span class="a-rise" style="--d:.3s">The world, <em class="gold-text">your pick</em></span></span></h2>
+          </div>
+          <div class="dest-grid g5" data-dest="intl"></div>
+        </section>
+
+        <!-- 6 LUCKY DIP -->
+        <section class="slide" data-glow="1100,-260,-300,600" aria-label="Monthly lucky dip">
+          <div class="spot a-fade" style="--d:.2s"></div>
+          <div class="confetti" id="confetti"></div>
+          <div class="ld-left">
+            <div class="eyebrow a-left" style="--d:.1s">Monthly lucky dip</div>
+            <p class="ld-pre a-up" style="--d:.35s">Every month, one lucky member drives home a</p>
+            <h2 class="ld-big"><span class="ln"><span class="a-rise gold-text" style="--d:.6s">Tata</span></span><span class="ln"><span class="a-rise gold-text it" style="--d:.75s">Altroz</span></span></h2>
+            <div class="ld-chips">
+              <span class="chip solid a-pop" style="--d:1.6s"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17l-6.1 3.4 1.5-6.8L2.2 9l6.9-.7z"/></svg>1 lucky person, every month</span>
+              <span class="chip line a-pop" style="--d:1.8s">Draw streamed live on YouTube</span>
+            </div>
+            <p class="ld-note a-fade" style="--d:2.1s">Live draw in the <b>2nd or 3rd week</b> of every month at <b>5:00 PM</b>. The winner does not pay the next installment.</p>
+          </div>
+          <div class="floor a-fade" style="--d:1.6s"></div>
+          <div class="car a-drive" style="--d:.9s"><img src="car.webp" alt="Red Tata Altroz"><img class="refl" src="car.webp" alt=""></div>
+        </section>
+
+        <!-- 7 POWER OF 5 -->
+        <section class="slide" data-glow="1250,150,-200,500" aria-label="Power of 5">
+          <div class="p5-left">
+            <div class="eyebrow a-left" style="--d:.1s">Membership</div>
+            <h2 class="p5-title"><span class="ln"><span class="a-rise" style="--d:.3s">Power<span class="of">of</span><span class="gold-text">5</span></span></span></h2>
+            <p class="p5-copy a-up" style="--d:.9s">Join with one entry amount, then bring <b>five members</b> into your first level. Every level grows five times.</p>
+            <div class="p5-stats">
+              <div class="glass a-up" style="--d:1.2s"><div class="k">Entry amount</div><div class="v gold-text">₹2,000</div></div>
+              <div class="glass a-up" style="--d:1.35s"><div class="k">First level</div><div class="v">5 members</div></div>
+            </div>
+          </div>
+          <div class="orbit" id="orbit"></div>
+        </section>
+
+        <!-- 8 TYPES OF INCOME -->
+        <section class="slide" data-glow="1300,-200,-150,650" aria-label="Types of income">
+          <div class="head">
+            <div class="eyebrow a-left" style="--d:.1s">Six ways to earn</div>
+            <h2 class="h2"><span class="ln"><span class="a-rise" style="--d:.3s">Types of <em class="gold-text">income</em></span></span></h2>
+          </div>
+          <div class="inc-grid" id="incgrid"></div>
+        </section>
+
+        <!-- 9 LEVEL WISE BUSINESS -->
+        <section class="slide" data-glow="1400,-250,-250,700" aria-label="Level-wise business">
+          <div class="head">
+            <div class="eyebrow a-left" style="--d:.1s">Team grows 5× every level</div>
+            <h2 class="h2"><span class="ln"><span class="a-rise" style="--d:.3s">Level-wise <em class="gold-text">business</em></span></span></h2>
+          </div>
+          <div class="tbl" id="tbl-level" style="right:120px"></div>
+        </section>
+
+        <!-- 10 COMMISSION -->
+        <section class="slide" data-glow="1250,-200,-250,650" aria-label="Commission calculation">
+          <div class="head">
+            <div class="eyebrow a-left" style="--d:.1s">Over 16 months</div>
+            <h2 class="h2"><span class="ln"><span class="a-rise" style="--d:.3s">Commission <em class="gold-text">calculation</em></span></span></h2>
+          </div>
+          <div class="tbl" id="tbl-comm" style="width:1110px"></div>
+          <div class="total glass a-right" style="--d:1.5s">
+            <div class="ring"></div>
+            <div><div class="k">Total commission</div><div class="t">16 months, all five levels</div></div>
+            <div><div class="v gold-text" data-count="824800" style="--d:1.9s">₹8,24,800</div><div class="s">12,800 + 32,000 + 80,000 + 2,00,000 + 5,00,000</div></div>
+          </div>
+        </section>
+
+        <!-- 11 MONTHLY SALARY -->
+        <section class="slide" data-glow="1200,-200,-250,620" aria-label="Monthly salary">
+          <div class="head">
+            <div class="eyebrow a-left" style="--d:.1s">Over 16 months</div>
+            <h2 class="h2"><span class="ln"><span class="a-rise" style="--d:.3s">Monthly <em class="gold-text">salary</em></span></span></h2>
+          </div>
+          <div class="tbl" id="tbl-sal" style="width:1110px"></div>
+          <div class="total glass a-right" style="--d:1.5s">
+            <div class="ring"></div>
+            <div><div class="k">Total salary</div><div class="t">16 months, all five levels</div></div>
+            <div><div class="v gold-text" data-count="6248000" style="--d:1.9s">₹62,48,000</div><div class="s">3,90,500 a month across five levels × 16 months</div></div>
+          </div>
+        </section>
+
+        <!-- 12 AWARDS -->
+        <section class="slide" data-glow="1300,-250,-200,650" aria-label="Awards and rewards">
+          <div class="head">
+            <div class="eyebrow a-left" style="--d:.1s">Recognition at every level</div>
+            <h2 class="h2"><span class="ln"><span class="a-rise" style="--d:.3s">Awards &amp; <em class="gold-text">rewards</em></span></span></h2>
+          </div>
+          <div class="aw-grid" id="awgrid"></div>
+        </section>
+
+        <!-- 13 HIGHLIGHTS -->
+        <section class="slide" data-glow="1200,-200,-250,560" aria-label="Plan highlights">
+          <div class="head">
+            <div class="eyebrow a-left" style="--d:.1s">In short</div>
+            <h2 class="h2"><span class="ln"><span class="a-rise" style="--d:.3s">MFT plan <em class="gold-text">highlights</em></span></span></h2>
+          </div>
+          <div class="hl-grid" id="hlgrid"></div>
+          <div class="cta a-up" style="--d:1.6s">
+            <div><b>Join today. Build your team.</b><span>Achieve financial freedom</span></div>
+            <div class="arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+          </div>
+        </section>
+
+        <!-- 14 TERMS -->
+        <section class="slide" data-nofoot data-glow="1400,-300,-300,700" aria-label="Terms and conditions">
+          <div class="head" style="top:80px">
+            <div class="eyebrow a-left" style="--d:.1s">Please read</div>
+            <h2 class="h2" style="font-size:68px"><span class="ln"><span class="a-rise" style="--d:.3s">Terms &amp; <em class="gold-text">conditions</em></span></span></h2>
+          </div>
+          <div class="terms-en" id="terms"></div>
+          <div class="kn-card a-up" style="--d:1.5s">
+            <img class="kt" src="kn-terms.webp" alt="Terms and conditions in Kannada">
+            <img class="kb" src="kn-bar.webp" alt="Members who do not win can choose any one travel destination they like (Kannada)">
+          </div>
+        </section>
+
+        <!-- 15 ABOUT -->
+        <section class="slide" data-glow="1150,-200,-250,600" aria-label="About MFT">
+          <div class="ab-left">
+            <div class="eyebrow a-left" style="--d:.1s">About MFT</div>
+            <h2 class="ab-title"><span class="ln"><span class="a-rise" style="--d:.3s">Memorable</span></span><span class="ln"><span class="a-rise gold-text it" style="--d:.45s">Family Trips</span></span></h2>
+            <div class="tag-lines">
+              <div class="a-left" style="--d:1s">Your journey, our responsibility.</div>
+              <div class="a-left" style="--d:1.15s">From dreams to destinations.</div>
+              <div class="a-left" style="--d:1.3s">Travel beyond expectations.</div>
+            </div>
+            <div class="ab-web a-up" style="--d:1.6s"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg>www.mftluxurytrip.com</div>
+          </div>
+          <div class="ab-list" id="ablist"></div>
+        </section>
+
+        <!-- 16 CONTACT -->
+        <section class="slide" data-glow="660,-300,-200,600" aria-label="Contact">
+          <img class="ct-logo a-spin" style="--d:.1s" src="logo.webp" alt="MFT logo">
+          <h2 class="ct-title"><span class="ln"><span class="a-rise" style="--d:.5s">Let's plan your <em class="gold-text">next trip</em></span></span></h2>
+          <div class="offices" id="offices"></div>
+          <div class="socials">
+            <div class="qr a-pop" style="--d:1.5s"><img src="qr.webp" alt="Instagram QR code for @MFT20_25"></div>
+            <div class="soc glass a-up" style="--d:1.65s">
+              <div class="k"><svg viewBox="0 0 24 24" fill="none" stroke="#e1306c" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1" fill="#e1306c"/></svg>Instagram</div>
+              <b>@MFT20_25</b>
+              <div class="k" style="margin-top:10px"><svg viewBox="0 0 24 24" fill="none" stroke="#d8b26a" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg>mftluxurytrip.com</div>
+            </div>
+            <div class="soc glass a-up" style="--d:1.8s">
+              <div class="k"><svg viewBox="0 0 24 24"><rect x="1.5" y="5" width="21" height="14" rx="4" fill="#e3262c"/><path d="M10 9l5 3-5 3z" fill="#fff"/></svg>YouTube</div>
+              <b>@MFTTRAVELS</b>
+              <span class="live">LIVE CHANNEL</span>
+            </div>
+          </div>
+        </section>
+      </div>
+      <button class="zone prev" id="zprev" aria-label="Previous slide"></button>
+      <button class="zone next" id="znext" aria-label="Next slide"></button>
+      <div class="loading" id="loading"><div class="in"><img src="logo.webp" alt="">Loading<div class="pb" id="pb"></div></div></div>
+    </div>
+  </div>
+  <nav class="rail" aria-label="Slide controls">
+    <button class="btn" id="prev" aria-label="Previous slide"><svg viewBox="0 0 24 24"><path d="M15.4 5.4 14 4l-8 8 8 8 1.4-1.4L8.8 12z"/></svg></button>
+    <span class="count" id="count">1 / 16</span>
+    <button class="btn" id="next" aria-label="Next slide"><svg viewBox="0 0 24 24"><path d="M8.6 18.6 10 20l8-8-8-8-1.4 1.4 6.6 6.6z"/></svg></button>
+    <div class="track" id="track"></div>
+    <button class="btn" id="play" aria-pressed="false" aria-label="Auto-play"><svg viewBox="0 0 24 24" id="playicon"><path d="M8 5v14l11-7z"/></svg><span class="lbl">Auto-play</span></button>
+    <button class="btn" id="replay" aria-label="Replay this slide"><svg viewBox="0 0 24 24"><path d="M12 5V1L7 6l5 5V7a5 5 0 1 1-5 5H5a7 7 0 1 0 7-7z"/></svg><span class="lbl">Replay</span></button>
+    <button class="btn" id="fs" aria-label="Full screen"><svg viewBox="0 0 24 24"><path d="M5 5h5V3H3v7h2zm9-2v2h5v5h2V3zm5 16h-5v2h7v-7h-2zM5 14H3v7h7v-2H5z"/></svg></button>
+  </nav>
+</div>
+
+<script>
+(function () {
+  const $ = (s, r = document) => r.querySelector(s);
+  const h = (html) => { const t = document.createElement('template'); t.innerHTML = html.trim(); return t.content; };
+  const sup = (n) => ({ 1: 'st', 2: 'nd', 3: 'rd' }[n] || 'th');
+
+  /* ---------- content ---------- */
+  const DOM = [
+    ['goa', 'Goa', ''], ['alleppey', 'Alleppey', 'Kerala backwaters'], ['munnar', 'Munnar', 'Kerala'], ['shirdi', 'Shirdi', 'Nasik'],
+    ['hyderabad', 'Hyderabad', ''], ['ayodhya', 'Ayodhya & Kashi', ''], ['ajmer', 'Ajmer', ''], ['anantha', 'Anantha Padmanabhaswamy', 'Temple · Kerala'],
+    ['rameshwaram', 'Rameshwaram', 'Tamil Nadu'], ['cordelia', 'Cordelia Cruise', 'Chennai – Chennai'], ['puri', 'Puri Jagannath', 'Odisha'], ['delhi', 'Delhi & Taj Mahal', ''],
+  ];
+  const INTL = [
+    ['dubai', 'Dubai', 'UAE'], ['umrah', 'Umrah', 'Saudi Arabia'], ['malaysia', 'Malaysia', ''], ['singapore', 'Singapore', ''], ['vietnam', 'Vietnam', ''],
+    ['krabi', 'Krabi', 'Thailand'], ['thailand', 'Bangkok / Pattaya', 'Thailand'], ['maldives', 'Maldives', ''], ['bali', 'Bali', 'Indonesia'], ['bhutan', 'Bhutan', ''],
+  ];
+  const TIERS = [
+    { k: 'gold', n: 'Gold', m: 5, pct: '8%', calc: '800', comm: 12800, sal: 500, rw: 'Leaders Meet', rs: '', ph: 'leaders' },
+    { k: 'diamond', n: 'Diamond', m: 25, pct: '4%', calc: '2,000', comm: 32000, sal: 2500, rw: 'Resort Stay', rs: '', ph: 'resort' },
+    { k: 'blue', n: 'Blue Diamond', m: 125, pct: '2%', calc: '5,000', comm: 80000, sal: 12500, rw: 'Goa Trip', rs: 'With office visit · flight to flight', ph: 'goa-flight' },
+    { k: 'crown', n: 'Crown Diamond', m: 625, pct: '1%', calc: '12,500', comm: 200000, sal: 62500, rw: 'Dubai Trip', rs: 'With CEO visit', ph: 'dubai-trip' },
+    { k: 'royal', n: 'Royal Crown Diamond', m: 3125, pct: '0.5%', calc: '31,250', comm: 500000, sal: 312500, rw: 'Thar Car', rs: '', ph: 'thar' },
+  ];
+  const inr = (n) => n.toLocaleString('en-IN');
+  const ICON = {
+    layers: '<path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/><path d="M3 17.5l9 5 9-5" opacity=".55"/>',
+    wallet: '<rect x="3" y="6" width="18" height="14" rx="3"/><path d="M3 10h18"/><path d="M16 15h2"/><path d="M6 6V5a2 2 0 0 1 2-2h9"/>',
+    medal: '<circle cx="12" cy="15" r="6"/><path d="M8.5 3h7L13 9.5h-2z"/><path d="M12 12.5l.9 1.8 2 .3-1.4 1.4.3 2-1.8-.9-1.8.9.3-2-1.4-1.4 2-.3z"/>',
+    plane: '<path d="M21 15.5v-2l-8-5V4a1.5 1.5 0 0 0-3 0v4.5l-8 5v2l8-2.5V18l-2 1.5V21l3.5-1 3.5 1v-1.5L13 18v-5z"/>',
+    ticket: '<path d="M3 8a2 2 0 0 0 2-2h14a2 2 0 0 0 2 2v2a2 2 0 0 0 0 4v2a2 2 0 0 0-2 2H5a2 2 0 0 0-2-2v-2a2 2 0 0 0 0-4z"/><path d="M14 6v12" stroke-dasharray="2 2.5"/>',
+    trophy: '<path d="M8 4h8v5a4 4 0 0 1-8 0z"/><path d="M8 6H5a3 3 0 0 0 3 4M16 6h3a3 3 0 0 1-3 4"/><path d="M12 13v4M8.5 20h7M10 17h4"/>',
+    globe: '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/>',
+    map: '<path d="M9 4l-6 2.5v13.5l6-2.5 6 2.5 6-2.5V4l-6 2.5z"/><path d="M9 4v13.5M15 6.5V20"/>',
+    passport: '<rect x="5" y="3" width="14" height="18" rx="2"/><circle cx="12" cy="10" r="3.2"/><path d="M9 16h6"/>',
+    spark: '<path d="M12 3v4M12 17v4M3 12h4M17 12h4M5.6 5.6l2.8 2.8M15.6 15.6l2.8 2.8M18.4 5.6l-2.8 2.8M8.4 15.6l-2.8 2.8"/>',
+    diamondI: '<path d="M6 4h12l3 5-9 11L3 9z"/><path d="M3 9h18M9 4l3 16 3-16"/>',
+  };
+  const svgI = (k) => `<svg viewBox="0 0 24 24">${ICON[k]}</svg>`;
+
+  // cover marquee: three columns of destination photos, each list doubled for a seamless loop
+  const cols = [['goa', 'd-', 'maldives', 'i-', 'munnar', 'd-', 'singapore', 'i-'], ['dubai', 'i-', 'alleppey', 'd-', 'bali', 'i-', 'delhi', 'd-'], ['krabi', 'i-', 'cordelia', 'd-', 'vietnam', 'i-', 'malaysia', 'i-']];
+  $('#marquee').append(h(cols.map(c => {
+    let imgs = ''; for (let i = 0; i < c.length; i += 2) imgs += `<img src="${c[i + 1]}${c[i]}.webp" alt="">`;
+    return `<div class="col">${imgs}${imgs}</div>`;
+  }).join('')));
+
+  // destination grids
+  document.querySelectorAll('[data-dest]').forEach(g => {
+    const list = g.dataset.dest === 'dom' ? DOM : INTL, p = g.dataset.dest === 'dom' ? 'd-' : 'i-';
+    g.append(h(list.map(([k, n, r], i) =>
+      `<figure class="dest a-pop" style="--d:${(0.55 + i * 0.09).toFixed(2)}s;margin:0"><img src="${p}${k}.webp" alt="${n}"><figcaption class="cap"><b${n.length > 16 ? ' class="sm"' : ''}>${n}</b>${r ? `<span>${r}</span>` : ''}</figcaption></figure>`).join('')));
+  });
+
+  // power of 5 orbit
+  (function () {
+    const C = 400, R = 300, pts = [...Array(5)].map((_, i) => { const a = -Math.PI / 2 + i * 2 * Math.PI / 5; return [C + R * Math.cos(a), C + R * Math.sin(a)]; });
+    let svg = `<svg class="lines" viewBox="0 0 800 800"><defs><linearGradient id="lg" x1="0" x2="1"><stop offset="0" stop-color="#f4e2b0"/><stop offset="1" stop-color="#a9793a"/></linearGradient></defs><circle cx="${C}" cy="${C}" r="${R}" class="a-fade" style="--d:.6s"/>`;
+    pts.forEach(([x, y], i) => svg += `<line x1="${C}" y1="${C}" x2="${x}" y2="${y}" pathLength="1" stroke-dasharray="1" class="a-draw" style="--d:${(1.1 + i * .12).toFixed(2)}s"/>`);
+    svg += '</svg>';
+    let html = svg + `<div class="pulse"></div><div class="node you a-pop" style="left:${C}px;top:${C}px;--d:.7s"><div><b>5</b><span>Members</span></div></div>`;
+    const person = '<svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0z"/></svg>';
+    pts.forEach(([x, y], i) => html += `<div class="node m a-pop" style="left:${x}px;top:${y}px;--d:${(1.5 + i * .14).toFixed(2)}s"><div>${person}<span>Member ${i + 1}</span></div></div>`);
+    $('#orbit').append(h(html));
+  })();
+
+  // income cards
+  $('#incgrid').append(h([['layers', 'Level Income'], ['wallet', 'Monthly Salary'], ['medal', 'Recognition'], ['plane', 'Luxury Tour'], ['ticket', 'Lucky Dip'], ['trophy', 'Rewards & Awards']]
+    .map(([ic, t], i) => `<div class="inc glass a-up" style="--d:${(0.6 + i * 0.13).toFixed(2)}s"><div class="ic">${svgI(ic)}</div><b>${t}</b></div>`).join('')));
+
+  // level-wise table
+  (function () {
+    const cols = 'grid-template-columns: 220px 560px 1fr 330px';
+    let s = `<div class="tr th a-fade" style="${cols};--d:.5s"><span>Level</span><span>Designation</span><span>Members</span><span style="text-align:right">Calculation</span></div>`;
+    TIERS.forEach((t, i) => {
+      const w = (Math.log(t.m) / Math.log(3125) * 100).toFixed(1) + '%';
+      s += `<div class="tr a-left" style="${cols};--d:${(0.7 + i * .16).toFixed(2)}s"><span class="lvl">${i + 1}<sup>${sup(i + 1)}</sup> level</span>
+        <span class="des c-${t.k}"><img src="t-${t.k}.webp" alt="" class="a-spin" style="--d:${(1.0 + i * .16).toFixed(2)}s">${t.n}</span>
+        <span class="bar-cell"><span class="bar"><i class="a-grow" style="--w:${w};--d:${(1.2 + i * .16).toFixed(2)}s"></i></span><span class="num">${inr(t.m)}</span></span>
+        <span class="calc" style="text-align:right">2,000<i>×</i>${inr(t.m)}</span></div>`;
+    });
+    $('#tbl-level').append(h(s));
+  })();
+
+  // commission table
+  (function () {
+    const cols = 'grid-template-columns: 220px 230px 1fr 280px';
+    let s = `<div class="tr th a-fade" style="${cols};--d:.5s"><span>Level</span><span>Percentage</span><span>Calculation</span><span style="text-align:right">Commission (₹)</span></div>`;
+    TIERS.forEach((t, i) => s += `<div class="tr a-left" style="${cols};--d:${(0.7 + i * .15).toFixed(2)}s"><span class="lvl">${i + 1}<sup>${sup(i + 1)}</sup> level</span>
+      <span class="num c-${t.k}">${t.pct}</span><span class="calc">${t.calc}<i>×</i>16</span><span class="num r">${inr(t.comm)}</span></div>`);
+    $('#tbl-comm').append(h(s));
+  })();
+
+  // salary table
+  (function () {
+    const cols = 'grid-template-columns: 220px 1fr 280px';
+    let s = `<div class="tr th a-fade" style="${cols};--d:.5s"><span>Level</span><span>Designation</span><span style="text-align:right">Monthly salary (₹)</span></div>`;
+    TIERS.forEach((t, i) => s += `<div class="tr a-left" style="${cols};--d:${(0.7 + i * .15).toFixed(2)}s"><span class="lvl">${i + 1}<sup>${sup(i + 1)}</sup> level</span>
+      <span class="des c-${t.k}"><img src="t-${t.k}.webp" alt="" class="a-spin" style="--d:${(1.0 + i * .15).toFixed(2)}s">${t.n}</span><span class="num r">${inr(t.sal)}</span></div>`);
+    $('#tbl-sal').append(h(s));
+  })();
+
+  // awards
+  $('#awgrid').append(h(TIERS.map((t, i) => `<div class="aw glass a-up" style="--d:${(0.6 + i * .16).toFixed(2)}s">
+    <div class="ph"><img src="a-${t.ph}.webp" alt="${t.rw}"></div><div class="ic a-spin" style="--d:${(1.1 + i * .16).toFixed(2)}s"><img src="t-${t.k}.webp" alt=""></div>
+    <div class="bd"><div class="tier c-${t.k}">${t.n}</div><div class="rw">${t.rw}</div>${t.rs ? `<div class="rs">${t.rs}</div>` : ''}<div class="lv">Level ${i + 1}</div></div></div>`).join('')));
+
+  // highlights
+  $('#hlgrid').append(h(['5 members in the 1st level', 'Team grows 5× every level', 'More team, more income', 'Helping others, helping yourself']
+    .map((t, i) => `<div class="hl glass a-up" style="--d:${(0.6 + i * .14).toFixed(2)}s"><div class="ck a-pop" style="--d:${(0.9 + i * .14).toFixed(2)}s"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div><b>${t}</b></div>`).join('')));
+
+  // terms (English, as given by MFT; spelling corrected)
+  $('#terms').append(h([
+    'A 30% TDS is applicable on giveaway prizes valued above ₹10,000.',
+    'GST is applicable on all goods, ranging from 5% to 18%, depending on the product category.',
+    'Every member should pay a monthly installment of ₹1,999 or ₹4,999 for 16 months.',
+    'The draw will be conducted live on YouTube in the 2nd or 3rd week of every month at 5:00 PM.',
+    'Each installment must be paid on the 10th of every month. Otherwise, your name will not be included in the surprise draw.',
+    'The winner of the draw will not have to pay the next installment.',
+    'No refunds will be given in lieu of the trip for any reason.',
+    'Members who do not pay their monthly installments by then will not be refunded.',
+    'Members should enroll their name and place of travel one month in advance.',
+    'The organiser’s decision will be final.',
+  ].map((t, i) => `<div class="term a-up" style="--d:${(0.45 + i * .07).toFixed(2)}s">${t}</div>`).join('')));
+
+  // about
+  $('#ablist').append(h([
+    ['diamondI', '100% travel and tourism', 'Every service revolves around travel planning, execution and experience delivery.'],
+    ['map', 'Tour packages', 'Domestic: heritage, nature, adventure, religious and beach holidays. International: Asia, Europe, Middle East, Africa and luxury cruises.'],
+    ['passport', 'Travel support', 'Visa processing, air tickets and cruise bookings, airport pickup and drop, hotel and resort bookings, travel insurance.'],
+    ['spark', 'Entertainment, events and education', 'Experiences that go beyond the journey itself.'],
+    ['globe', 'Premium, yet affordable', 'Complete end-to-end service, from the first booking to the trip home.'],
+  ].map(([ic, t, p], i) => `<div class="ab glass a-right" style="--d:${(0.6 + i * .14).toFixed(2)}s"><div class="ic">${svgI(ic)}</div><div><b>${t}</b><p>${p}</p></div></div>`).join('')));
+
+  // offices
+  const pin = '<svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>';
+  $('#offices').append(h([
+    ['Dubai head office', 'UAE', 'MFT Group of Company<br>Block B – B91-179, Dubai Research Technology and Innovation Park, University City, Dubai, United Arab Emirates'],
+    ['USA head office', 'United States', 'MFT Group of Company<br>SRY Dream Destination LLC, 3019 Edgewater Dr, Unit #A1049, Orlando, FL 32804, USA'],
+    ['Indian head office', 'India', 'MFT Group of Company<br>Imperium Grand Building, opp. Novotel Casino Rivers, Panjim, Goa 403001'],
+  ].map(([k, c, p], i) => `<div class="office glass a-up" style="--d:${(0.8 + i * .15).toFixed(2)}s"><div class="pin">${pin}${k}</div><b>${c}</b><p>${p}</p></div>`).join('')));
+
+  // confetti for the lucky dip
+  (function () {
+    const cols = ['#f4e2b0', '#d8b26a', '#ffffff', '#e3262c', '#4cc6ec'];
+    let s = '';
+    for (let i = 0; i < 46; i++) {
+      s += `<i style="left:${(Math.random() * 100).toFixed(1)}%;background:${cols[i % cols.length]};--t:${(5 + Math.random() * 5).toFixed(1)}s;--cd:${(1.4 + Math.random() * 6).toFixed(1)}s;--sx:${(Math.random() * 200 - 100).toFixed(0)}px;--r:${(Math.random() * 900 - 450).toFixed(0)}deg;width:${(6 + Math.random() * 8).toFixed(0)}px"></i>`;
+    }
+    $('#confetti').innerHTML = s;
+  })();
+
+  /* ---------- footers ---------- */
+  const slides = [...document.querySelectorAll('.slide')], N = slides.length;
+  slides.forEach((el, i) => {
+    if (i === 0 || el.hasAttribute('data-nofoot')) return;
+    el.append(h(`<div class="foot a-fade" style="--d:.2s"><div class="fb"><img src="logo.webp" alt="">MFT · Time to Travel</div><div class="pg"><b>${String(i + 1).padStart(2, '0')}</b> / ${N}</div></div>`));
+  });
+
+  /* ---------- viewer ---------- */
+  const stage = $('#stage'), frame = $('#frame'), screen = $('#screen'), bgfx = $('#bgfx');
+  function fit() {
+    const W = screen.clientWidth, H = screen.clientHeight, k = Math.min(W / 1920, H / 1080);
+    frame.style.width = Math.floor(1920 * k) + 'px'; frame.style.height = Math.floor(1080 * k) + 'px';
+    stage.style.transform = `scale(${k})`;
+  }
+  new ResizeObserver(fit).observe(screen); fit();
+
+  const imgsOf = (el) => [...el.querySelectorAll('img')];
+  const ready = new Array(N).fill(null);
+  function load(i) {
+    if (ready[i]) return ready[i];
+    ready[i] = Promise.all(imgsOf(slides[i]).map(im => (im.complete && im.naturalWidth) ? (im.decode ? im.decode().catch(() => {}) : 0)
+      : new Promise(r => { im.addEventListener('load', r, { once: true }); im.addEventListener('error', r, { once: true }); }).then(() => im.decode ? im.decode().catch(() => {}) : 0)));
+    return ready[i];
+  }
+  const fontsReady = (document.fonts && document.fonts.ready) ? Promise.race([document.fonts.ready, new Promise(r => setTimeout(r, 2500))]) : Promise.resolve();
+
+  function lastDelay(el) { let m = 0; el.querySelectorAll('[style*="--d"]').forEach(n => { const v = parseFloat(n.style.getPropertyValue('--d')); if (v > m) m = v; }); return m; }
+  const done = slides.map(el => lastDelay(el) + 1.2);
+
+  // count-up for totals
+  function countUp(el) {
+    const end = +el.dataset.count, delay = parseFloat(el.style.getPropertyValue('--d')) * 1000 || 0, dur = 1600;
+    el.textContent = '₹0';
+    clearTimeout(el._t); cancelAnimationFrame(el._r);
+    el._t = setTimeout(() => {
+      const t0 = performance.now();
+      const step = (t) => { const p = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - p, 3); el.textContent = '₹' + inr(Math.round(end * e)); if (p < 1) el._r = requestAnimationFrame(step); };
+      el._r = requestAnimationFrame(step);
+    }, delay);
+  }
+
+  const dots = slides.map((_, i) => { const b = document.createElement('button'); b.className = 'dot'; b.setAttribute('aria-label', 'Go to slide ' + (i + 1)); b.addEventListener('click', () => go(i)); $('#track').append(b); return b; });
+  let cur = -1, token = 0;
+  async function go(i, force) {
+    i = Math.max(0, Math.min(N - 1, i));
+    if (i === cur && !force) return;
+    const t = ++token;
+    await Promise.all([load(i), fontsReady]);
+    if (t !== token) return;
+    $('#loading').classList.add('done');
+    if (cur >= 0) slides[cur].classList.remove('on');
+    const el = slides[i];
+    el.classList.remove('on'); void el.offsetWidth; el.classList.add('on');
+    const g = (el.dataset.glow || '1300,-100,-200,600').split(',');
+    ['--o1x', '--o1y', '--o2x', '--o2y'].forEach((v, k) => bgfx.style.setProperty(v, g[k] + 'px'));
+    el.querySelectorAll('[data-count]').forEach(countUp);
+    cur = i;
+    dots.forEach((d, k) => { d.classList.toggle('cur', k === i); d.classList.toggle('seen', k < i); });
+    $('#count').textContent = (i + 1) + ' / ' + N;
+    try { history.replaceState(null, '', i ? '#slide-' + (i + 1) : location.pathname); } catch (e) {}
+    for (let k = 1; k <= 2; k++) if (i + k < N) load(i + k);
+    schedule();
+  }
+  const next = () => go(cur + 1), prev = () => go(cur - 1);
+
+  let playing = false, timer = 0;
+  function schedule() { clearTimeout(timer); if (playing) timer = setTimeout(() => cur < N - 1 ? next() : setPlay(false), (done[cur] + 3.5) * 1000); }
+  function setPlay(on) {
+    playing = on; $('#play').setAttribute('aria-pressed', on);
+    $('#playicon').innerHTML = on ? '<path d="M6 5h4v14H6zm8 0h4v14h-4z"/>' : '<path d="M8 5v14l11-7z"/>';
+    schedule();
+  }
+  $('#play').addEventListener('click', () => setPlay(!playing));
+  $('#replay').addEventListener('click', () => go(cur, true));
+  $('#prev').addEventListener('click', prev);
+  $('#next').addEventListener('click', next);
+  $('#fs').addEventListener('click', () => {
+    const d = document, r = d.documentElement;
+    try {
+      if (d.fullscreenElement || d.webkitFullscreenElement) (d.exitFullscreen || d.webkitExitFullscreen).call(d);
+      else { const p = (r.requestFullscreen || r.webkitRequestFullscreen).call(r); if (p && p.catch) p.catch(() => {}); }
+    } catch (e) {}
+  });
+  let sx = null, sy = 0, swiped = false;
+  screen.addEventListener('pointerdown', e => { sx = e.clientX; sy = e.clientY; swiped = false; });
+  screen.addEventListener('pointerup', e => {
+    if (sx === null) return; const dx = e.clientX - sx, dy = e.clientY - sy; sx = null;
+    if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) { swiped = true; dx < 0 ? next() : prev(); }
+  });
+  $('#zprev').addEventListener('click', () => { if (!swiped) prev(); });
+  $('#znext').addEventListener('click', () => { if (!swiped) next(); });
+  document.addEventListener('keydown', e => {
+    if (e.metaKey || e.ctrlKey || e.altKey) return;
+    const k = e.key;
+    if (k === 'ArrowRight' || k === 'PageDown' || k === ' ') { e.preventDefault(); next(); }
+    else if (k === 'ArrowLeft' || k === 'PageUp') { e.preventDefault(); prev(); }
+    else if (k === 'Home') go(0); else if (k === 'End') go(N - 1);
+    else if (k === 'f' || k === 'F') $('#fs').click();
+  });
+  const fromHash = () => { const m = /^#slide-(\d+)$/.exec(location.hash); return m ? Math.min(N, Math.max(1, +m[1])) - 1 : 0; };
+  window.addEventListener('hashchange', () => go(fromHash()));
+
+  const first = fromHash(), fi = imgsOf(slides[first]); let n = 0;
+  fi.forEach(im => im.addEventListener('load', () => $('#pb').style.setProperty('--p', Math.round(++n / fi.length * 100) + '%')));
+  go(first).then(() => slides.forEach((_, i) => setTimeout(() => load(i), 500 + i * 120)));
+})();
+</script>
+</body>
+</html>
