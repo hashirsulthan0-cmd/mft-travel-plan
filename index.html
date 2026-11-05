@@ -321,16 +321,30 @@ body {
 
 .lv-badge { position: absolute; right: 200px; top: 112px; display: flex; align-items: center; gap: 18px; padding: 14px 30px 14px 14px; border-radius: 999px; background: linear-gradient(100deg, #b8873f, #f4e2b0 50%, #d8b26a); color: var(--night); box-shadow: 0 18px 50px rgba(216,178,106,.28); }
 .lv-badge b { width: 92px; height: 92px; border-radius: 50%; background: var(--night); color: var(--gold-hi); display: grid; place-items: center; font: 800 54px/1 var(--display); }
-.lv-badge span { font: 700 26px/1.15 var(--sans); letter-spacing: .08em; text-transform: uppercase; }
-.steps { position: absolute; left: 120px; right: 120px; top: 274px; display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; }
+.lv-badge span { font: 800 28px/1 var(--sans); letter-spacing: .14em; text-transform: uppercase; }
+.lv-badge b { font-variant-numeric: tabular-nums; }
+.steps { position: absolute; left: 120px; right: 120px; top: 274px; display: grid; grid-template-columns: repeat(5, 1fr) 1.15fr; gap: 0; }
 .step { position: relative; display: flex; align-items: center; gap: 14px; padding-right: 24px; }
 .step i { flex: none; width: 52px; height: 52px; border-radius: 50%; display: grid; place-items: center; font: 700 24px var(--sans); font-style: normal; color: var(--night); background: var(--gold); box-shadow: 0 0 0 6px rgba(216,178,106,.15); }
 .step span { font: 600 23px var(--sans); color: var(--ivory); white-space: nowrap; }
 .step span small { display: block; font: 500 18px var(--sans); color: var(--mist); letter-spacing: .1em; text-transform: uppercase; }
 .step::after { content: ""; flex: 1; height: 2px; background: linear-gradient(90deg, rgba(216,178,106,.7), rgba(216,178,106,.15)); }
 .step:last-child::after { display: none; }
+.step:nth-child(5)::after { height: 3px; background: repeating-linear-gradient(90deg, var(--gold-hi) 0 10px, transparent 10px 18px); background-size: 36px 3px; animation: flow .9s linear infinite; }
+@keyframes flow { to { background-position: 36px 0; } }
+.step.more i { background: transparent; color: var(--gold-hi); border: 2px solid var(--gold); font-size: 32px; box-shadow: 0 0 0 6px rgba(216,178,106,.12), 0 0 26px rgba(216,178,106,.45); }
+.slide.on .step.more i { animation: glowp 1.6s ease-in-out 1.4s infinite; }
+@keyframes glowp { 50% { box-shadow: 0 0 0 10px rgba(216,178,106,.18), 0 0 40px rgba(216,178,106,.7); } }
+.step.more span { color: var(--gold-hi); font-weight: 800; }
+.step.more span b { font-variant-numeric: tabular-nums; }
 .tbl.tbl-c { top: 362px; }
-.tbl-c .tr { height: 94px; margin-bottom: 10px; }
+.tbl-c .tr { height: 80px; margin-bottom: 8px; }
+.tbl-c .tr.more { height: 72px; background: rgba(216,178,106,.08); border: 1.5px dashed rgba(216,178,106,.65); }
+.tr.more .plus { width: 46px; height: 46px; border-radius: 50%; background: var(--gold); color: var(--night); display: grid; place-items: center; font: 800 30px/1 var(--display); }
+.tr.more .lv { font: 700 27px var(--sans); color: var(--gold-hi); }
+.tr.more .lv b { font-variant-numeric: tabular-nums; }
+.tr.more .mo { text-align: right; font: 700 24px var(--sans); color: var(--ivory); }
+.tr.more .mo span { color: var(--gold-hi); }
 .total.total-c { top: 362px; height: 586px; width: 680px; padding: 40px 40px; }
 .total-c .run { margin-top: 18px; display: inline-flex; align-items: center; gap: 12px; padding: 12px 22px; border-radius: 999px; background: var(--gold); color: var(--night); font: 800 26px var(--display); letter-spacing: -.01em; }
 .total-c .run::before { content: ""; width: 12px; height: 12px; border-radius: 50%; background: var(--night); }
@@ -648,7 +662,7 @@ body {
             <div class="eyebrow a-left" style="--d:.1s">Over 16 months</div>
             <h2 class="h2"><span class="ln"><span class="a-rise" style="--d:.3s">Commission <em class="gold-text">calculation</em></span></span></h2>
           </div>
-          <div class="lv-badge a-pop" style="--d:.8s"><b>15</b><span>Runs up to<br>15 levels</span></div>
+          <div class="lv-badge a-pop" style="--d:.8s"><b data-to="15" data-from="0" data-at="1000" data-tick="110">15</b><span>Levels</span></div>
           <div class="steps" id="steps-comm"></div>
           <div class="tbl tbl-c" id="tbl-comm" style="width:990px"></div>
           <div class="total total-c glass a-right" style="--d:1.5s">
@@ -919,11 +933,13 @@ body {
     let s = `<div class="tr th a-fade" style="${cols};--d:.5s"><span>Level</span><span>Percent</span><span>Calculation</span><span style="text-align:right">Commission (₹)</span></div>`;
     TIERS.forEach((t, i) => s += `<div class="tr a-left" style="${cols};--d:${(0.7 + i * .15).toFixed(2)}s"><span class="lvl">${i + 1}<sup>${sup(i + 1)}</sup> level</span>
       <span class="num pct c-${t.k}">${t.pct}</span><span class="calc">${t.calc}<i>×</i>16</span><span class="num r">${inr(t.comm)}</span></div>`);
+    s += `<div class="tr more a-left" style="grid-template-columns: 70px 1fr 330px;--d:1.55s"><span class="plus">+</span><span class="lv">6<sup>th</sup>, 7<sup>th</sup> … up to <b data-to="15" data-from="6" data-at="2000" data-tick="220">15</b><sup>th</sup> level</span><span class="mo">Running up to <span>16 months</span></span></div>`;
     $('#tbl-comm').append(h(s));
   })();
 
   // commission level steps
-  $('#steps-comm').append(h(TIERS.map((t, i) => `<div class="step a-left" style="--d:${(0.6 + i * .12).toFixed(2)}s"><i>${i + 1}</i><span>${t.pct}<small>Level ${i + 1}</small></span></div>`).join('')));
+  $('#steps-comm').append(h(TIERS.map((t, i) => `<div class="step a-left" style="--d:${(0.6 + i * .12).toFixed(2)}s"><i>${i + 1}</i><span>${t.pct}<small>Level ${i + 1}</small></span></div>`).join('') +
+    `<div class="step more a-left" style="--d:1.2s"><i>+</i><span>Level <b data-to="15" data-from="6" data-at="1500" data-tick="260">15</b><small>Keeps going · up to 15</small></span></div>`));
 
   // salary table
   (function () {
@@ -1034,6 +1050,17 @@ body {
   function lastDelay(el) { let m = 0; el.querySelectorAll('[style*="--d"]').forEach(n => { const v = parseFloat(n.style.getPropertyValue('--d')); if (v > m) m = v; }); return m; }
   const done = slides.map(el => lastDelay(el) + 1.2);
 
+  // stepped level counters (badge, step bar, extra row)
+  function countNum(el) {
+    const from = +el.dataset.from, to = +el.dataset.to, at = +el.dataset.at || 0, tick = +el.dataset.tick || 150;
+    clearTimeout(el._t); clearInterval(el._i);
+    el.textContent = from;
+    el._t = setTimeout(() => {
+      let v = from;
+      el._i = setInterval(() => { v++; el.textContent = v; if (v >= to) clearInterval(el._i); }, tick);
+    }, at);
+  }
+
   // count-up for totals
   function countUp(el) {
     const end = +el.dataset.count, delay = parseFloat(el.style.getPropertyValue('--d')) * 1000 || 0, dur = 1600;
@@ -1061,6 +1088,7 @@ body {
     const g = (el.dataset.glow || '1300,-100,-200,600').split(',');
     ['--o1x', '--o1y', '--o2x', '--o2y'].forEach((v, k) => bgfx.style.setProperty(v, g[k] + 'px'));
     el.querySelectorAll('[data-count]').forEach(countUp);
+    el.querySelectorAll('[data-to]').forEach(countNum);
     cur = i;
     dots.forEach((d, k) => { d.classList.toggle('cur', k === i); d.classList.toggle('seen', k < i); });
     $('#count').textContent = (i + 1) + ' / ' + N;
