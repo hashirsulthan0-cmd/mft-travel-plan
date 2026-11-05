@@ -24,7 +24,7 @@
 <meta name="twitter:image" content="https://hashirsulthan0-cmd.github.io/mft-travel-plan/preview.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Figtree:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Figtree:wght@400;500;600;700;800&family=Noto+Sans+Kannada:wght@500;600;700;800&display=swap">
 <style>
 /* Layout: one 1920x1080 stage scaled to the screen. Midnight navy ground, champagne gold as the single accent,
    Bodoni for display moments, Outfit for everything that has to be read fast. */
@@ -403,12 +403,27 @@ body {
 @keyframes sweep { to { left: 1900px; } }
 
 /* ---------- 14 terms ---------- */
-.terms-en { position: absolute; left: 120px; right: 120px; top: 232px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 60px; row-gap: 10px; counter-reset: t; }
-.term { display: grid; grid-template-columns: 46px 1fr; gap: 14px; font: 500 24px/1.32 var(--sans); color: #eef2f8; }
+.terms-en { position: absolute; left: 120px; right: 120px; top: 250px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 64px; row-gap: 18px; counter-reset: t; }
+.term { display: grid; grid-template-columns: 50px 1fr; gap: 14px; font: 500 25px/1.36 var(--sans); color: #eef2f8; }
+.term.new { color: #fff; font-weight: 600; }
+.term.new::before { color: var(--night); background: var(--gold); border-radius: 8px; text-align: center; height: 30px; line-height: 30px; margin-top: 2px; }
 .term::before { counter-increment: t; content: counter(t, decimal-leading-zero); font: 600 18px/1.6 var(--sans); color: var(--gold); letter-spacing: .06em; }
-.kn-card { position: absolute; left: 120px; right: 120px; top: 650px; height: 410px; border-radius: 26px; background: #f6efe2; padding: 22px 34px 18px; display: flex; flex-direction: column; align-items: center; gap: 12px; box-shadow: 0 24px 70px rgba(0,0,0,.45); }
-.kn-card img.kt { height: 270px; width: auto; }
-.kn-card img.kb { width: 100%; height: auto; border-radius: 12px; }
+.notice { position: absolute; left: 120px; right: 120px; top: 828px; display: flex; align-items: center; gap: 26px; padding: 24px 34px; border-radius: 24px; background: linear-gradient(100deg, rgba(216,178,106,.24), rgba(216,178,106,.07)); border: 1.5px solid rgba(216,178,106,.6); }
+.notice .ic { flex: none; width: 66px; height: 66px; border-radius: 50%; background: var(--gold); display: grid; place-items: center; }
+.notice .ic svg { width: 34px; height: 34px; fill: var(--night); }
+.notice .tx { flex: 1; min-width: 0; }
+.notice .tx small { display: block; font: 700 18px var(--sans); letter-spacing: .26em; text-transform: uppercase; color: var(--gold); }
+.notice .tx b { display: block; margin-top: 6px; font: 700 29px/1.25 var(--display); color: #fff; letter-spacing: -.01em; }
+.notice .by { flex: none; font: 700 19px var(--sans); letter-spacing: .2em; text-transform: uppercase; color: var(--gold-hi); }
+.kn { font-family: "Noto Sans Kannada", var(--sans); }
+.h2.kn { font: 800 66px/1.25 "Noto Sans Kannada", var(--display); letter-spacing: 0; }
+.kn-card { position: absolute; left: 120px; right: 120px; top: 262px; border-radius: 26px; background: #f6efe2; padding: 26px 40px 24px; display: flex; flex-direction: column; gap: 14px; box-shadow: 0 24px 70px rgba(0,0,0,.45); }
+.kn-card img { width: 100%; height: auto; display: block; }
+.kn-card img.kb { border-radius: 12px; }
+.kn-note { border-radius: 16px; background: #fff8e6; border: 2px solid #d8b26a; padding: 16px 24px 18px; color: #13476d; }
+.kn-note .t { display: flex; align-items: center; gap: 12px; font: 800 27px/1.3 "Noto Sans Kannada", var(--sans); color: #8a5a17; }
+.kn-note .t span { font: 700 15px var(--sans); letter-spacing: .24em; text-transform: uppercase; color: #a9793a; }
+.kn-note p { margin: 6px 0 0; font: 700 24px/1.55 "Noto Sans Kannada", var(--sans); }
 
 /* ---------- 15 about ---------- */
 .ab-left { position: absolute; left: 120px; top: 92px; width: 700px; }
@@ -698,14 +713,34 @@ body {
         </section>
 
         <!-- 14 TERMS -->
-        <section class="slide" data-nofoot data-glow="1400,-300,-300,700" aria-label="Terms and conditions">
-          <div class="head" style="top:80px">
+        <section class="slide" data-glow="1400,-300,-300,700" aria-label="Terms and conditions">
+          <div class="head">
             <div class="eyebrow a-left" style="--d:.1s">Please read</div>
-            <h2 class="h2" style="font-size:68px"><span class="ln"><span class="a-rise" style="--d:.3s">Terms &amp; <em class="gold-text">conditions</em></span></span></h2>
+            <h2 class="h2"><span class="ln"><span class="a-rise" style="--d:.3s">Terms &amp; <em class="gold-text">conditions</em></span></span></h2>
           </div>
           <div class="terms-en" id="terms"></div>
-          <div class="kn-card a-up" style="--d:1.5s">
-            <img class="kt" src="kn-terms.webp" alt="Terms and conditions in Kannada">
+          <div class="notice a-up" style="--d:1.5s">
+            <div class="ic"><svg viewBox="0 0 24 24"><path d="M3 10v4a1 1 0 0 0 1 1h2l1 5h3l-1-5h1l7 4V5l-7 4H4a1 1 0 0 0-1 1zm17-1v6a3 3 0 0 0 0-6z"/></svg></div>
+            <div class="tx"><small>Important notice</small><b>Timely installment payment is mandatory for Lucky Draw gift eligibility.</b></div>
+            <div class="by">MFT Management</div>
+          </div>
+        </section>
+
+        <!-- 14b TERMS KANNADA -->
+        <section class="slide" data-nofoot data-glow="1300,-250,-250,650" aria-label="Terms and conditions in Kannada">
+          <div class="head">
+            <div class="eyebrow a-left" style="--d:.1s">Please read · Kannada</div>
+            <h2 class="h2 kn"><span class="ln"><span class="a-rise" style="--d:.3s">ನಿಯಮಗಳು ಮತ್ತು <em class="gold-text">ಷರತ್ತುಗಳು</em></span></span></h2>
+          </div>
+          <div class="kn-card a-up" style="--d:.6s">
+            <img src="kn-a.webp" alt="Terms and conditions in Kannada, points 1 to 4">
+            <div class="kn-note a-pop" style="--d:1.1s">
+              <div class="t">ಪ್ರಮುಖ ಸೂಚನೆ <span>Important notice</span></div>
+              <p>ಒಂದು ವೇಳೆ ಸದಸ್ಯರು ನಿಗದಿತ ಸಮಯದಲ್ಲಿ ಕಂತಿನ ಹಣವನ್ನು ಪಾವತಿಸಲು ವಿಫಲರಾದಲ್ಲಿ, ಅವರ ಟೋಕನ್ ನಂಬರ್ ಲಕ್ಕಿ ಡ್ರಾದಲ್ಲಿ ಬಂದರೂ ಸಹ ಯಾವುದೇ ಕಾರಣಕ್ಕೂ ಅವರಿಗೆ ಗಿಫ್ಟ್ ನೀಡಲಾಗುವುದಿಲ್ಲ.</p>
+              <p>ಅಂತಹ ಸಂದರ್ಭದಲ್ಲಿ ಆ ಗಿಫ್ಟ್ ಕಂಪನಿಯ ಉಳಿತಾಯಕ್ಕೆ ಸೇರ್ಪಡೆಯಾಗುತ್ತದೆ.</p>
+              <p>ದಯವಿಟ್ಟು ಪ್ರತಿಯೊಬ್ಬ ಸದಸ್ಯರು ಈ ನಿಯಮವನ್ನು ಕಡ್ಡಾಯವಾಗಿ ಪಾಲಿಸಿ, ಪ್ರತಿ ತಿಂಗಳು ಸರಿಯಾದ ಸಮಯಕ್ಕೆ ಕಂತು ಪಾವತಿಸಿ ಸಹಕರಿಸಬೇಕಾಗಿ ವಿನಂತಿ.</p>
+            </div>
+            <img src="kn-b.webp" alt="Terms and conditions in Kannada, remaining points">
             <img class="kb" src="kn-bar.webp" alt="Members who do not win can choose any one travel destination they like (Kannada)">
           </div>
         </section>
@@ -914,13 +949,15 @@ body {
     'GST is applicable on all goods, ranging from 5% to 18%, depending on the product category.',
     'Every member should pay a monthly installment of ₹2,000 or ₹5,000 for 16 months.',
     'The draw will be conducted live on YouTube in the 2nd or 3rd week of every month at 5:00 PM.',
-    'Each installment must be paid on the 10th of every month. Otherwise, your name will not be included in the surprise draw.',
+    '*Every member must pay the monthly installment within the due date, the 10th of every month.',
+    '*If the installment is not paid on time, the member is not eligible for the gift, even if their token number is selected in the Lucky Draw.',
+    '*In such cases, the gift will be added to the company’s savings.',
     'The winner of the draw will not have to pay the next installment.',
     'No refunds will be given in lieu of the trip for any reason.',
     'Members who do not pay their monthly installments by then will not be refunded.',
     'Members should enroll their name and place of travel one month in advance.',
-    'The organiser’s decision will be final.',
-  ].map((t, i) => `<div class="term a-up" style="--d:${(0.45 + i * .07).toFixed(2)}s">${t}</div>`).join('')));
+    'All members must follow these rules strictly, without exception. The organiser’s decision will be final.',
+  ].map((t, i) => `<div class="term${t[0] === '*' ? ' new' : ''} a-up" style="--d:${(0.45 + i * .07).toFixed(2)}s">${t.replace(/^\*/, '')}</div>`).join('')));
 
   // about
   $('#ablist').append(h([
