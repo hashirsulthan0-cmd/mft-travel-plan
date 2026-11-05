@@ -458,6 +458,13 @@ body {
 .tag-lines { margin-top: 46px; display: grid; gap: 10px; }
 .tag-lines div { font: 600 32px/1.35 var(--display); color: var(--ivory); }
 .tag-lines div:nth-child(2) { color: var(--gold-hi); }
+.since { margin-top: 34px; display: flex; align-items: center; gap: 26px; padding: 22px 34px 22px 22px; border-radius: 28px; background: linear-gradient(110deg, rgba(216,178,106,.22), rgba(216,178,106,.05)); border: 1.5px solid rgba(216,178,106,.55); width: max-content; }
+.since .seal2 { width: 118px; height: 118px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #f4e2b0, #c89b52 55%, #8a6128); color: var(--night); display: grid; place-content: center; text-align: center; box-shadow: 0 0 0 8px rgba(216,178,106,.14), 0 16px 40px rgba(0,0,0,.45); }
+.since .seal2 small { font: 800 15px var(--sans); letter-spacing: .3em; text-transform: uppercase; }
+.since .seal2 b { font: 800 34px/1 var(--display); letter-spacing: -.02em; }
+.since .tx small { display: block; font: 700 18px var(--sans); letter-spacing: .3em; text-transform: uppercase; color: var(--gold); }
+.since .tx b { display: block; margin-top: 4px; font: 800 46px/1.05 var(--display); letter-spacing: -.02em; color: #fff; }
+.since .tx span { display: block; margin-top: 6px; font: 500 21px var(--sans); color: var(--mist); }
 .ab-web { margin-top: 56px; display: inline-flex; align-items: center; gap: 16px; padding: 18px 28px; border-radius: 999px; border: 1px solid var(--line); font: 600 28px var(--sans); letter-spacing: .08em; }
 .ab-web svg { width: 26px; height: 26px; stroke: var(--gold); fill: none; stroke-width: 1.8; }
 .ab-list { position: absolute; left: 880px; right: 190px; top: 70px; display: grid; gap: 14px; }
@@ -785,6 +792,7 @@ body {
               <div class="a-left" style="--d:1.3s">Travel beyond expectations.</div>
             </div>
             <div class="ab-web a-up" style="--d:1.6s"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg>www.mftluxurytrip.com</div>
+            <div class="since a-up" style="--d:1.9s"><div class="seal2"><small>Est.</small><b>2023</b></div><div class="tx"><small>Trusted since</small><b>February 2023</b><span>Serving travellers across India &amp; UAE</span></div></div>
           </div>
           <div class="ab-list" id="ablist"></div>
         </section>
