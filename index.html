@@ -475,15 +475,22 @@ body {
 .ab p { margin: 8px 0 0; font: 400 25px/1.4 var(--sans); color: var(--mist); }
 
 /* ---------- 16 contact ---------- */
-.ct-logo { position: absolute; left: 50%; top: 52px; width: 116px; height: 116px; margin-left: -58px; filter: drop-shadow(0 16px 40px rgba(0,0,0,.6)); }
-.ct-title { position: absolute; left: 0; right: 0; top: 186px; margin: 0; text-align: center; font: 800 62px/1.05 var(--display); letter-spacing: -.02em; }
-.offices { position: absolute; left: 120px; right: 120px; top: 300px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-.office { padding: 30px 36px; height: 290px; }
+.ct-logo { position: absolute; left: 50%; top: 40px; width: 100px; height: 100px; margin-left: -50px; filter: drop-shadow(0 16px 40px rgba(0,0,0,.6)); }
+.ct-title { position: absolute; left: 0; right: 0; top: 152px; margin: 0; text-align: center; font: 800 56px/1.05 var(--display); letter-spacing: -.02em; }
+.offices { position: absolute; left: 120px; right: 120px; top: 250px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.office { padding: 26px 34px; height: 252px; }
+.callband { position: absolute; left: 120px; right: 120px; top: 522px; height: 132px; border-radius: 34px; display: flex; align-items: center; justify-content: space-between; gap: 30px; padding: 0 30px 0 50px; background: linear-gradient(100deg, #b8873f, #f4e2b0 45%, #d8b26a 70%, #a9793a); color: var(--night); box-shadow: 0 24px 70px rgba(216,178,106,.25); }
+.callband .l b { display: block; font: 800 46px/1.05 var(--display); letter-spacing: -.02em; }
+.callband .l span { display: block; margin-top: 8px; font: 700 18px var(--sans); letter-spacing: .3em; text-transform: uppercase; opacity: .8; }
+.callband .ph2 { display: flex; gap: 16px; }
+.callband .num2 { display: flex; align-items: center; gap: 14px; padding: 16px 28px 16px 16px; border-radius: 999px; background: var(--night); color: var(--ivory); font: 800 34px var(--display); letter-spacing: .01em; font-variant-numeric: tabular-nums; }
+.callband .num2 i { width: 56px; height: 56px; border-radius: 50%; background: var(--gold); display: grid; place-items: center; }
+.callband .num2 svg { width: 28px; height: 28px; fill: var(--night); }
 .office .pin { display: flex; align-items: center; gap: 14px; font: 700 21px var(--sans); letter-spacing: .26em; text-transform: uppercase; color: var(--gold); }
 .office .pin svg { width: 26px; height: 26px; fill: var(--gold); }
 .office b { display: block; margin-top: 16px; font: 800 36px/1.05 var(--display); }
-.office p { margin: 12px 0 0; font: 400 24px/1.42 var(--sans); color: #eef2f8; }
-.socials { position: absolute; left: 120px; right: 120px; top: 616px; height: 290px; grid-template-columns: 290px 1fr 1fr !important; display: grid; grid-template-columns: 300px 1fr 1fr; gap: 24px; }
+.office p { margin: 10px 0 0; font: 400 21px/1.38 var(--sans); color: #eef2f8; }
+.socials { position: absolute; left: 120px; right: 120px; top: 676px; height: 256px; grid-template-columns: 256px 1fr 1fr !important; grid-template-columns: 290px 1fr 1fr !important; display: grid; grid-template-columns: 300px 1fr 1fr; gap: 24px; }
 .qr { background: #fff; border-radius: 26px; padding: 14px; display: grid; place-items: center; }
 .qr img { width: 100%; height: 100%; object-fit: contain; border-radius: 12px; }
 .soc { padding: 40px 44px; display: flex; flex-direction: column; justify-content: center; gap: 14px; }
@@ -848,8 +855,15 @@ body {
         <!-- 16 CONTACT -->
         <section class="slide" data-glow="660,-300,-200,600" aria-label="Contact">
           <img class="ct-logo a-spin" style="--d:.1s" src="logo.webp" alt="MFT logo">
-          <h2 class="ct-title"><span class="ln"><span class="a-rise" style="--d:.5s">Let's plan your <em class="gold-text">next trip</em></span></span></h2>
+          <h2 class="ct-title"><span class="ln"><span class="a-rise" style="--d:.5s">Our company <em class="gold-text">addresses</em></span></span></h2>
           <div class="offices" id="offices"></div>
+          <div class="callband a-up" style="--d:1.3s">
+            <div class="l"><b>Let's plan your next trip</b><span>Call us today</span></div>
+            <div class="ph2">
+              <div class="num2"><i><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z"/></svg></i>+91 72047 76313</div>
+              <div class="num2"><i><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z"/></svg></i>+91 86606 68604</div>
+            </div>
+          </div>
           <div class="socials">
             <div class="qr a-pop" style="--d:1.5s"><img src="qr.webp" alt="Instagram QR code for @MFT20_25"></div>
             <div class="soc glass a-up" style="--d:1.65s">
