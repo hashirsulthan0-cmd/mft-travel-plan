@@ -331,7 +331,13 @@ body {
 .step:last-child::after { display: none; }
 .tbl.tbl-c { top: 362px; }
 .tbl-c .tr { height: 94px; margin-bottom: 10px; }
-.total.total-c { top: 362px; height: 586px; }
+.total.total-c { top: 362px; height: 586px; width: 680px; padding: 40px 40px; }
+.total-c .run { margin-top: 18px; display: inline-flex; align-items: center; gap: 12px; padding: 12px 22px; border-radius: 999px; background: var(--gold); color: var(--night); font: 800 26px var(--display); letter-spacing: -.01em; }
+.total-c .run::before { content: ""; width: 12px; height: 12px; border-radius: 50%; background: var(--night); }
+.total-c .cap { font: 600 24px var(--sans); color: var(--ivory); }
+.total-c .v.big { margin-top: 8px; font-size: 104px; letter-spacing: -.045em; }
+.total-c .s { font-size: 21px; margin-top: 10px; }
+.total-c .more { margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--line); font: 600 23px var(--sans); color: var(--gold-hi); }
 
 /* ---------- trips arranged by MFT ---------- */
 .trips { position: absolute; left: 120px; right: 120px; top: 300px; height: 670px; display: grid; grid-template-columns: .8fr 1fr 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 18px; }
@@ -627,13 +633,13 @@ body {
             <div class="eyebrow a-left" style="--d:.1s">Over 16 months</div>
             <h2 class="h2"><span class="ln"><span class="a-rise" style="--d:.3s">Commission <em class="gold-text">calculation</em></span></span></h2>
           </div>
-          <div class="lv-badge a-pop" style="--d:.8s"><b>5</b><span>Earn up to<br>5 levels</span></div>
+          <div class="lv-badge a-pop" style="--d:.8s"><b>15</b><span>Runs up to<br>15 levels</span></div>
           <div class="steps" id="steps-comm"></div>
-          <div class="tbl tbl-c" id="tbl-comm" style="width:1110px"></div>
+          <div class="tbl tbl-c" id="tbl-comm" style="width:990px"></div>
           <div class="total total-c glass a-right" style="--d:1.5s">
             <div class="ring"></div>
-            <div><div class="k">Total commission</div><div class="t">16 months, up to 5 levels</div></div>
-            <div><div class="v gold-text" data-count="824800" style="--d:1.9s">₹8,24,800</div><div class="s">12,800 + 32,000 + 80,000 + 2,00,000 + 5,00,000</div></div>
+            <div><div class="k">Total commission</div><div class="run">Running up to 15 levels</div></div>
+            <div><div class="cap">Total for the first 5 levels · 16 months</div><div class="v big gold-text" data-count="824800" style="--d:1.9s">₹8,24,800</div><div class="s">12,800 + 32,000 + 80,000 + 2,00,000 + 5,00,000</div><div class="more">Earnings continue level by level, up to level 15.</div></div>
           </div>
         </section>
 
@@ -874,8 +880,8 @@ body {
 
   // commission table
   (function () {
-    const cols = 'grid-template-columns: 220px 230px 1fr 280px';
-    let s = `<div class="tr th a-fade" style="${cols};--d:.5s"><span>Level</span><span>Percentage</span><span>Calculation</span><span style="text-align:right">Commission (₹)</span></div>`;
+    const cols = 'grid-template-columns: 180px 180px 1fr 250px';
+    let s = `<div class="tr th a-fade" style="${cols};--d:.5s"><span>Level</span><span>Percent</span><span>Calculation</span><span style="text-align:right">Commission (₹)</span></div>`;
     TIERS.forEach((t, i) => s += `<div class="tr a-left" style="${cols};--d:${(0.7 + i * .15).toFixed(2)}s"><span class="lvl">${i + 1}<sup>${sup(i + 1)}</sup> level</span>
       <span class="num pct c-${t.k}">${t.pct}</span><span class="calc">${t.calc}<i>×</i>16</span><span class="num r">${inr(t.comm)}</span></div>`);
     $('#tbl-comm').append(h(s));
