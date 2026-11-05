@@ -343,6 +343,8 @@ body {
 .tr.more .plus { width: 46px; height: 46px; border-radius: 50%; background: var(--gold); color: var(--night); display: grid; place-items: center; font: 800 30px/1 var(--display); }
 .tr.more .lv { font: 700 27px var(--sans); color: var(--gold-hi); }
 .tr.more .lv b { font-variant-numeric: tabular-nums; }
+.tr.more .pc { font: 800 34px var(--sans); color: var(--t-royal); }
+.tr.more .pc small { font: 600 20px var(--sans); color: var(--mist); }
 .tr.more .mo { text-align: right; font: 700 24px var(--sans); color: var(--ivory); }
 .tr.more .mo span { color: var(--gold-hi); }
 .total.total-c { top: 362px; height: 586px; width: 680px; padding: 40px 40px; }
@@ -385,6 +387,10 @@ body {
 .oc .chip2 { position: absolute; left: 30px; bottom: 26px; z-index: 2; display: inline-flex; align-items: center; gap: 10px; padding: 10px 20px; border-radius: 999px; background: var(--gold); color: var(--night); font: 700 20px var(--sans); letter-spacing: .14em; text-transform: uppercase; }
 .oc .bd { padding: 30px 38px; }
 .oc b { display: block; font: 800 52px/1.05 var(--display); letter-spacing: -.02em; }
+.oc .bd2 { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; padding: 26px 34px; }
+.oc .bd2 b { font-size: 40px; }
+.oc .bd2 span { display: block; margin-top: 6px; font: 700 17px var(--sans); letter-spacing: .2em; text-transform: uppercase; color: var(--gold); }
+.oc .bd2 p { font-size: 21px; margin-top: 10px; }
 .oc p { margin: 14px 0 0; font: 400 25px/1.45 var(--sans); color: #eef2f8; }
 
 /* ---------- 12 awards ---------- */
@@ -668,7 +674,7 @@ body {
           <div class="total total-c glass a-right" style="--d:1.5s">
             <div class="ring"></div>
             <div><div class="k">Total commission</div><div class="run">Running up to 15 levels</div></div>
-            <div><div class="cap">Total for the first 5 levels · 16 months</div><div class="v big gold-text" data-count="824800" style="--d:1.9s">₹8,24,800</div><div class="s">12,800 + 32,000 + 80,000 + 2,00,000 + 5,00,000</div><div class="more">Earnings continue level by level, up to level 15.</div></div>
+            <div><div class="cap">Total for the first 5 levels · 16 months</div><div class="v big gold-text" data-count="824800" style="--d:1.9s">₹8,24,800</div><div class="s">12,800 + 32,000 + 80,000 + 2,00,000 + 5,00,000</div><div class="more">Levels 6 to 15 continue at 0.5% each.</div></div>
           </div>
         </section>
 
@@ -791,18 +797,18 @@ body {
         </section>
 
         <!-- TWO OFFICES -->
-        <section class="slide" data-glow="900,-200,-250,600" aria-label="Our two offices">
+        <section class="slide" data-glow="900,-200,-250,600" aria-label="Our offices in India and UAE">
           <div class="head">
             <div class="eyebrow a-left" style="--d:.1s">India &amp; UAE</div>
-            <h2 class="h2"><span class="ln"><span class="a-rise" style="--d:.3s">Two offices, <em class="gold-text">one team</em></span></span></h2>
+            <h2 class="h2"><span class="ln"><span class="a-rise" style="--d:.3s">Our offices, <em class="gold-text">one team</em></span></span></h2>
           </div>
           <div class="two">
             <div class="oc glass a-left" style="--d:.6s">
-              <div class="ph"><img src="o-meeting.webp" alt="MFT Goa office meeting room"><span class="chip2">India office</span></div>
-              <div class="bd"><b>Panjim, Goa</b><p>Imperium Grand Building, opp. Novotel Casino Rivers, Panjim, Goa 403001</p></div>
+              <div class="ph"><img src="o-meeting.webp" alt="MFT Goa office meeting room"><small>Goa office</small><span class="chip2">India offices</span></div>
+              <div class="bd bd2"><div><b>Goa</b><span>Indian head office</span><p>Imperium Grand Building, opp. Novotel Casino Rivers, Panjim, Goa 403001</p></div><div><b>Bangalore</b><span>Karnataka head office</span><p>#314, F Block, 20th Main, 10th Cross, Sahakaranagar, Bangalore 560092</p></div></div>
             </div>
             <div class="oc glass a-right" style="--d:.8s">
-              <div class="ph"><img src="i-dubai.webp" alt="Dubai skyline"><small>Dubai skyline</small><span class="chip2">International office</span></div>
+              <div class="ph"><img src="i-dubai.webp" alt="Dubai skyline"><small>Dubai skyline</small><span class="chip2">UAE office</span></div>
               <div class="bd"><b>Dubai, UAE</b><p>Block B – B91-179, Dubai Research Technology and Innovation Park, University City, Dubai</p></div>
             </div>
           </div>
@@ -933,13 +939,13 @@ body {
     let s = `<div class="tr th a-fade" style="${cols};--d:.5s"><span>Level</span><span>Percent</span><span>Calculation</span><span style="text-align:right">Commission (₹)</span></div>`;
     TIERS.forEach((t, i) => s += `<div class="tr a-left" style="${cols};--d:${(0.7 + i * .15).toFixed(2)}s"><span class="lvl">${i + 1}<sup>${sup(i + 1)}</sup> level</span>
       <span class="num pct c-${t.k}">${t.pct}</span><span class="calc">${t.calc}<i>×</i>16</span><span class="num r">${inr(t.comm)}</span></div>`);
-    s += `<div class="tr more a-left" style="grid-template-columns: 70px 1fr 330px;--d:1.55s"><span class="plus">+</span><span class="lv">6<sup>th</sup>, 7<sup>th</sup> … up to <b data-to="15" data-from="6" data-at="2000" data-tick="220">15</b><sup>th</sup> level</span><span class="mo">Running up to <span>16 months</span></span></div>`;
+    s += `<div class="tr more a-left" style="grid-template-columns: 64px 1fr 190px 230px;--d:1.55s"><span class="plus">+</span><span class="lv">6<sup>th</sup>, 7<sup>th</sup> … up to <b data-to="15" data-from="6" data-at="2000" data-tick="220">15</b><sup>th</sup> level</span><span class="pc">0.5% <small>each</small></span><span class="mo">Up to <span>16 months</span></span></div>`;
     $('#tbl-comm').append(h(s));
   })();
 
   // commission level steps
   $('#steps-comm').append(h(TIERS.map((t, i) => `<div class="step a-left" style="--d:${(0.6 + i * .12).toFixed(2)}s"><i>${i + 1}</i><span>${t.pct}<small>Level ${i + 1}</small></span></div>`).join('') +
-    `<div class="step more a-left" style="--d:1.2s"><i>+</i><span>Level <b data-to="15" data-from="6" data-at="1500" data-tick="260">15</b><small>Keeps going · up to 15</small></span></div>`));
+    `<div class="step more a-left" style="--d:1.2s"><i>+</i><span>Level <b data-to="15" data-from="6" data-at="1500" data-tick="260">15</b><small>0.5% each · up to 15</small></span></div>`));
 
   // salary table
   (function () {
@@ -988,8 +994,8 @@ body {
   const pin = '<svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>';
   $('#offices').append(h([
     ['Dubai head office', 'UAE', 'MFT Group of Company<br>Block B – B91-179, Dubai Research Technology and Innovation Park, University City, Dubai, United Arab Emirates'],
-    ['USA head office', 'United States', 'MFT Group of Company<br>SRY Dream Destination LLC, 3019 Edgewater Dr, Unit #A1049, Orlando, FL 32804, USA'],
-    ['Indian head office', 'India', 'MFT Group of Company<br>Imperium Grand Building, opp. Novotel Casino Rivers, Panjim, Goa 403001'],
+    ['Indian head office', 'Goa', 'MFT Group of Company<br>Imperium Grand Building, opp. Novotel Casino Rivers, Panjim, Goa 403001'],
+    ['Karnataka head office', 'Bangalore', 'MFT Group of Company<br>#314, F Block, 20th Main, 10th Cross, Sahakaranagar, Bangalore 560092'],
   ].map(([k, c, p], i) => `<div class="office glass a-up" style="--d:${(0.8 + i * .15).toFixed(2)}s"><div class="pin">${pin}${k}</div><b>${c}</b><p>${p}</p></div>`).join('')));
 
   // confetti for the lucky dip
